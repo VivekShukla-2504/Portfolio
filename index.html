@@ -5,23 +5,48 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050816">
 
-    <title>Vivek Shukla | Portfolio</title>
+    <title>Vivek Shukla | MERN Stack Developer & AI Enthusiast</title>
+
+    <!-- ================= SEO META TAGS ================= -->
+    <meta name="description" content="Vivek Shukla | MERN Stack Developer | AI Enthusiast | Software Engineer. MCA @ JNU. 350+ DSA problems solved, 15+ projects built.">
+    <meta name="keywords" content="Vivek Shukla, MERN Developer, Portfolio, React, Node, Java, DSA, Software Engineer, JNU">
+    <meta name="author" content="Vivek Shukla">
+    <link rel="canonical" href="https://vivekshukla.dev/">
+
+    <!-- ================= OPEN GRAPH TAGS ================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vivek Shukla | Portfolio">
+    <meta property="og:description" content="MERN Stack Developer | AI Enthusiast | 350+ DSA Problems Solved">
+    <meta property="og:image" content="profile.png">
+    <meta property="og:url" content="https://vivekshukla.dev/">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vivek Shukla | Portfolio">
+    <meta name="twitter:description" content="MERN Stack Developer | AI Enthusiast | 350+ DSA Problems Solved">
+    <meta name="twitter:image" content="profile.png">
+
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <link rel="stylesheet" href="style.css">
 
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 
 </head>
 
 
 <body>
 
+    <!-- ================= SKIP LINK (Accessibility) ================= -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="bg-blobs"></div>
 
+    <!-- ================= THEME TOGGLE ================= -->
+    <button id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme">🌙</button>
 
 
     <header>
@@ -33,35 +58,43 @@
             </h2>
 
 
-            <ul>
+            <ul id="navLinks">
 
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#coding">Coding</a></li>
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
 
-
             </ul>
+
+            <button id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
 
         </nav>
 
     </header>
 
+    <div id="navOverlay"></div>
 
 
+    <main id="main-content">
 
-
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
 
     <section id="home" class="hero">
 
 
         <div class="hero-image">
 
-            <img src="profile.png" alt="Vivek">
+            <img src="profile.png" alt="Vivek Shukla, MERN Stack Developer and AI enthusiast, headshot photo" width="280" height="280">
 
         </div>
 
@@ -69,6 +102,7 @@
 
         <div class="hero-content">
 
+            <div class="eyebrow">🟢 Available for Internships & Full-Time Roles</div>
 
             <h1>
                 Hi, I'm <span>Vivek Shukla</span>
@@ -92,10 +126,41 @@
                 </a>
 
 
-                <a href="resume.pdf" download class="btn resume">
+                <a href="resume.pdf" download class="btn resume" id="resumeBtn">
                     📄 Resume
                 </a>
 
+
+                <a href="#contact" class="btn hire">
+                    🤝 Hire Me
+                </a>
+
+
+            </div>
+
+            <!-- ================= HERO STATS ================= -->
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h2><span class="counter" data-target="350">0</span>+</h2>
+                    <p>DSA Problems</p>
+                </div>
+
+                <div class="stat">
+                    <h2><span class="counter" data-target="15">0</span>+</h2>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat">
+                    <h2><span class="counter" data-target="10">0</span>+</h2>
+                    <p>Technologies</p>
+                </div>
+
+                <div class="stat">
+                    <h2><span class="counter" data-target="2">0</span></h2>
+                    <p>Certifications</p>
+                </div>
 
             </div>
 
@@ -104,18 +169,18 @@
             <div class="social">
 
 
-                <a href="https://github.com/VivekShukla-2504" target="_blank">
+                <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener">
                     GitHub
                 </a>
 
 
-                <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank">
+                <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank" rel="noopener">
                     LinkedIn
                 </a>
 
 
-                <a href="https://leetcode.com/u/Vivek_Shukla_25/" target="_blank">
-                    LeetCode
+                <a href="#coding">
+                    💻 Coding Profiles
                 </a>
 
 
@@ -135,24 +200,33 @@
 
         <h2>👨‍💻 About Me</h2>
 
-        <div class="about-container">
+        <div class="about-grid">
 
-            <div class="about-text">
-
+            <div class="about-card">
+                <div class="about-card-icon">🎓</div>
+                <h4>Who I Am</h4>
                 <p>
                     I am an <strong>MCA student at Jawaharlal Nehru University (JNU)</strong>
                     with a strong passion for <strong>Full-Stack Web Development</strong>,
                     <strong>Artificial Intelligence</strong>, and building scalable software
                     solutions that solve real-world problems.
                 </p>
+            </div>
 
+            <div class="about-card">
+                <div class="about-card-icon">💻</div>
+                <h4>What I Build With</h4>
                 <p>
                     My primary expertise lies in the
                     <strong>MERN Stack (MongoDB, Express.js, React, Node.js)</strong>.
                     I enjoy developing secure, responsive, and user-friendly applications,
                     integrating REST APIs, authentication systems, and AI-powered features.
                 </p>
+            </div>
 
+            <div class="about-card">
+                <div class="about-card-icon">🎯</div>
+                <h4>Where I'm Headed</h4>
                 <p>
                     I actively strengthen my
                     <strong>Data Structures & Algorithms</strong> skills using Java and
@@ -161,7 +235,6 @@
                     <strong>Software Development Engineer (SDE)</strong> by building
                     impactful products with clean, efficient, and maintainable code.
                 </p>
-
             </div>
 
         </div>
@@ -177,6 +250,8 @@
 
         </div>
     </section>
+
+
     <!-- ================= EDUCATION ================= -->
 
     <section id="education" class="reveal">
@@ -270,150 +345,7 @@
     </section>
 
 
-
-
-
-
-
-
-
-    <!-- SKILLS -->
-
-    <!--
-<section id="skills" class="reveal">
-
-
-<h2>🛠 Tech Arsenal</h2>
-
-
-<div class="skills-container">
-
-
-
-<h3>💻 Languages</h3>
-
-<div class="icons">
-
-<img src="https://skillicons.dev/icons?i=java&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=python&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=javascript&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=typescript&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=html&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=css&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=sql&theme=dark">
-
-</div>
-
-
-
-
-<h3>⚛ Frontend</h3>
-
-
-<div class="icons">
-
-<img src="https://skillicons.dev/icons?i=react&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=tailwind&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=bootstrap&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=vite&theme=dark">
-
-</div>
-
-
-
-
-
-<h3>🌐 Backend</h3>
-
-
-<div class="icons">
-
-
-<img src="https://skillicons.dev/icons?i=nodejs&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=express&theme=dark">
-
-
-
-</div>
-
-
-
-
-
-
-<h3>🗄 Databases</h3>
-
-
-<div class="icons">
-
-<img src="https://skillicons.dev/icons?i=mysql&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=mongodb&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=redis&theme=dark">
-
-
-</div>
-
-
-
-
-
-<h3>⚙ Tools</h3>
-
-
-<div class="icons">
-
-
-<img src="https://skillicons.dev/icons?i=docker&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=git&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=github&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=linux&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=vscode&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=postman&theme=dark">
-
-<img src="https://skillicons.dev/icons?i=aws&theme=dark">
-
-
-</div>
-
-
-
-
-
-<h3>🧠 AI / ML</h3>
-
-
-<div class="icons">
-
-
-<img src="https://skillicons.dev/icons?i=python&theme=dark">
-<img src="https://skillicons.dev/icons?i=tensorflow&theme=dark">
-<img src="https://skillicons.dev/icons?i=opencv&theme=dark">
-</div>
-
-
-
-</div>
-
-
-</section>
--->
+    <!-- ================= SKILLS ================= -->
 
     <section id="skills" class="reveal">
 
@@ -425,13 +357,13 @@
             <div class="skill-card">
                 <h4>💻 Languages</h4>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=java&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=python&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=javascript&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=typescript&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=html&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=css&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=sql&theme=dark">
+                    <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=javascript&theme=dark" alt="JavaScript" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=typescript&theme=dark" alt="TypeScript" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=sql&theme=dark" alt="SQL" width="55" height="55" loading="lazy">
                 </div>
             </div>
 
@@ -439,10 +371,10 @@
             <div class="skill-card">
                 <h4>⚛ Frontend</h4>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=react&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=tailwind&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=vite&theme=dark">
+                    <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=vite&theme=dark" alt="Vite" width="55" height="55" loading="lazy">
                 </div>
             </div>
 
@@ -450,8 +382,8 @@
             <div class="skill-card">
                 <h4>🌐 Backend</h4>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=nodejs&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=express&theme=dark">
+                    <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=express&theme=dark" alt="Express" width="55" height="55" loading="lazy">
                 </div>
             </div>
 
@@ -459,9 +391,9 @@
             <div class="skill-card">
                 <h4>🗄 Databases</h4>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=mysql&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=mongodb&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=redis&theme=dark">
+                    <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt="MongoDB" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=redis&theme=dark" alt="Redis" width="55" height="55" loading="lazy">
                 </div>
             </div>
 
@@ -469,13 +401,13 @@
             <div class="skill-card">
                 <h4>⚙ Tools</h4>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=docker&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=git&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=github&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=linux&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=vscode&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=postman&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=aws&theme=dark">
+                    <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=github&theme=dark" alt="GitHub" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=linux&theme=dark" alt="Linux" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=vscode&theme=dark" alt="VS Code" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=postman&theme=dark" alt="Postman" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS" width="55" height="55" loading="lazy">
                 </div>
             </div>
 
@@ -483,17 +415,25 @@
             <div class="skill-card">
                 <h4>🧠 AI / ML</h4>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=python&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark">
-                    <img src="https://skillicons.dev/icons?i=opencv&theme=dark">
+                    <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" alt="TensorFlow" width="55" height="55" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=opencv&theme=dark" alt="OpenCV" width="55" height="55" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Other Tools (Data / MIS) -->
+            <div class="skill-card">
+                <h4>📊 Data & Reporting</h4>
+                <div class="chip-icons">
+                    <span class="chip">📗 Excel</span>
+                    <span class="chip">📈 Power BI</span>
+                    <span class="chip">📉 Tableau</span>
                 </div>
             </div>
 
         </div>
 
     </section>
-
-
 
 
     <!-- ================= PROJECTS ================= -->
@@ -522,7 +462,6 @@
 
             <div class="project-card">
 
-
                 <h3>🤖 Gen-AI Interview Platform</h3>
 
 
@@ -537,8 +476,7 @@
                 </div>
 
 
-
-                <a href="https://github.com/VivekShukla-2504/Gen-AI" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/Gen-AI" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
@@ -547,14 +485,10 @@
 
 
 
-
-
-
             <!-- Streamify -->
 
 
             <div class="project-card">
-
 
                 <h3>💬 Streamify - Real Time Communication</h3>
 
@@ -570,8 +504,7 @@
                 </div>
 
 
-
-                <a href="https://github.com/VivekShukla-2504/Streamify" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/Streamify" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
@@ -580,15 +513,10 @@
 
 
 
-
-
-
-
             <!-- AI Invoice -->
 
 
             <div class="project-card">
-
 
                 <h3>📊 AI Invoice SaaS Platform</h3>
 
@@ -604,8 +532,7 @@
                 </div>
 
 
-
-                <a href="https://github.com/VivekShukla-2504/AI-Invoice-SaaS-Platform" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/AI-Invoice-SaaS-Platform" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
@@ -627,7 +554,7 @@
                     React • Node.js • Express.js • MongoDB • JWT • Tailwind CSS
                 </div>
 
-                <a href="https://github.com/VivekShukla-2504/TransitOps-Platform" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/TransitOps-Platform" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
@@ -661,7 +588,7 @@
                     Python • Prolog • Flask • AI • Rule-Based System
                 </div>
 
-                <a href="https://github.com/VivekShukla-2504/AI-project" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/AI-project" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
@@ -685,7 +612,7 @@
                     Python • NLP • Machine Learning • Scikit-learn
                 </div>
 
-                <a href="https://github.com/VivekShukla-2504/gui/tree/main/sms%20classifier" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/gui/tree/main/sms%20classifier" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
@@ -708,19 +635,13 @@
                     Python • GUI • Automation • PyAutoGUI
                 </div>
 
-                <a href="https://github.com/VivekShukla-2504/gui/blob/main/window%20resizer.py" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/gui/blob/main/window%20resizer.py" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
             </div>
 
         </div>
-
-
-
-
-
-
 
 
 
@@ -732,126 +653,231 @@
         </h3>
 
 
-
-
         <div class="project-grid">
-
-
-
-
 
             <!-- BMI -->
 
-
             <div class="project-card">
 
-
                 <h3>⚖️ BMI Calculator</h3>
-
 
                 <p>
                     Interactive web application to calculate Body Mass Index
                     with responsive user interface.
                 </p>
 
-
-
                 <div class="tags">
                     HTML • CSS • JavaScript
                 </div>
 
-
-
-                <a href="https://github.com/VivekShukla-2504/MERN/tree/main/BMI_Index" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/MERN/tree/main/BMI_Index" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
-
-
             </div>
-
-
-
-
-
-
 
             <!-- Guess Number -->
 
-
             <div class="project-card">
 
-
                 <h3>🎯 Guess Number Game</h3>
-
 
                 <p>
                     JavaScript based interactive guessing game with random
                     number generation and user feedback.
                 </p>
 
-
-
                 <div class="tags">
                     HTML • CSS • JavaScript
                 </div>
 
-
-
-                <a href="https://github.com/VivekShukla-2504/MERN/tree/main/guess_number" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/MERN/tree/main/guess_number" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
-
-
             </div>
-
-
-
-
-
-
 
             <!-- Color Change -->
 
-
             <div class="project-card">
 
-
                 <h3>🎨 Web Window Color Change</h3>
-
 
                 <p>
                     DOM manipulation project that dynamically changes
                     webpage background colors.
                 </p>
 
-
-
                 <div class="tags">
                     HTML • CSS • JavaScript • DOM
                 </div>
 
-
-
-                <a href="https://github.com/VivekShukla-2504/MERN/tree/main/Webwindow_color_change" target="_blank">
+                <a href="https://github.com/VivekShukla-2504/MERN/tree/main/Webwindow_color_change" target="_blank" rel="noopener">
                     🔗 GitHub
                 </a>
 
-
-
             </div>
-
-
-
-
 
         </div>
 
+    </section>
 
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience" class="reveal">
+
+        <h2>💼 Experience</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-content">
+
+                    <span class="year">Jul 2025 – Oct 2025</span>
+
+                    <h3>MIS Assistant <span class="role-tag">Full-Time</span></h3>
+
+                    <h4>People Action for National Integration (PANI)</h4>
+
+                    <p>
+                        Managed large Excel datasets end-to-end — data cleaning, pivot tables,
+                        VLOOKUP-based reporting, and dashboard creation — to support
+                        data-driven decisions across the organization.
+                    </p>
+
+                    <div class="tags">
+                        Excel • Data Cleaning • Dashboard Reporting • Pivot Tables • VLOOKUP
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-content">
+
+                    <span class="year">Summer Internship</span>
+
+                    <h3>Machine Learning Intern <span class="role-tag">Internship</span></h3>
+
+                    <h4>Analytics Vidhya</h4>
+
+                    <p>
+                        Completed a hands-on machine learning summer internship covering
+                        data preprocessing, model building, and evaluation on real-world
+                        datasets.
+                    </p>
+
+                    <div class="tags">
+                        Python • Machine Learning • Data Preprocessing • Model Evaluation
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
+    <section id="achievements" class="reveal">
+
+        <h2>🏆 Achievements</h2>
+
+        <div class="achievements-grid">
+
+            <div class="achievement-card">
+                <div class="achievement-icon">🧩</div>
+                <div class="achievement-value">350+</div>
+                <p>DSA Problems Solved</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">✅</div>
+                <div class="achievement-value">Certified</div>
+                <p>HackerRank Software Engineer</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">🎓</div>
+                <div class="achievement-value">MCA</div>
+                <p>Jawaharlal Nehru University</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-value">15+</div>
+                <p>Projects Built</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CODING PROFILES ================= -->
+
+    <section id="coding" class="reveal">
+
+        <h2>💻 Coding Profiles</h2>
+
+        <div class="coding-grid">
+
+            <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener" class="coding-card">
+                ⚫ GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank" rel="noopener" class="coding-card">
+                🔷 LinkedIn
+            </a>
+
+            <a href="https://leetcode.com/u/Vivek_Shukla_25/" target="_blank" rel="noopener" class="coding-card">
+                🟡 LeetCode
+            </a>
+
+            <a href="https://www.geeksforgeeks.org/profile/7800652515vivek/" target="_blank" rel="noopener" class="coding-card">
+                🟢 GeeksforGeeks
+            </a>
+
+            <a href="https://codolio.com/profile/Vivek_Tech" target="_blank" rel="noopener" class="coding-card">
+                🔵 Codolio
+            </a>
+
+            <a href="https://www.hackerrank.com/profile/vivek25tech" target="_blank" rel="noopener" class="coding-card">
+                🟣 HackerRank
+            </a>
+
+            <a href="https://medium.com/@7800652515vivek" target="_blank" rel="noopener" class="coding-card">
+                ⚪ Medium
+            </a>
+
+        </div>
+
+        <!-- ================= GITHUB STATS ================= -->
+
+        <div class="github-stats">
+
+            <img src="https://github-readme-stats.vercel.app/api?username=VivekShukla-2504&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" alt="Vivek's GitHub stats" width="495" height="195" loading="lazy" onerror="this.closest('.github-stats').classList.add('stats-error'); this.style.display='none';">
+
+            <img src="https://streak-stats.demolab.com/?user=VivekShukla-2504&theme=tokyonight&hide_border=true&background=00000000" alt="Vivek's GitHub streak stats" width="495" height="195" loading="lazy" onerror="this.closest('.github-stats').classList.add('stats-error'); this.style.display='none';">
+
+            <!-- Auto-updating LeetCode stats card (no manual editing needed) -->
+            <img src="https://leetcard.jacoblin.cool/Vivek_Shukla_25?theme=dark&font=Poppins&ext=heatmap" alt="Vivek's LeetCode stats" width="495" height="195" loading="lazy" onerror="this.closest('.github-stats').classList.add('stats-error'); this.style.display='none';">
+
+            <p class="stats-fallback">
+                📊 Live stats are momentarily unavailable —
+                <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener">view directly on GitHub</a>
+            </p>
+
+        </div>
+
+    </section>
 
 
     <!-- ================= CERTIFICATIONS ================= -->
@@ -878,7 +904,7 @@
                     HackerRank • Software Engineering • DSA • Programming
                 </div>
 
-                <a href="https://www.hackerrank.com/certificates/652552679d40" target="_blank">
+                <a href="https://www.hackerrank.com/certificates/652552679d40" target="_blank" rel="noopener">
                     📜 View Certificate
                 </a>
 
@@ -902,7 +928,7 @@
                     HackerRank • Software Engineering • Coding • Algorithms
                 </div>
 
-                <a href="https://www.hackerrank.com/certificates/efa733bb8d33" target="_blank">
+                <a href="https://www.hackerrank.com/certificates/efa733bb8d33" target="_blank" rel="noopener">
                     📜 View Certificate
                 </a>
 
@@ -913,59 +939,78 @@
     </section>
 
 
-
-
-    <!-- CONTACT -->
+    <!-- ================= CONTACT ================= -->
 
 
     <section id="contact" class="reveal">
 
 
-        <h2>Contact Me</h2>
+        <h2>📬 Contact Me</h2>
+
+        <div class="contact-info">
+
+            <div class="contact-item">📍 New Delhi, India</div>
+
+            <div class="contact-item">📧 vivek25tech@gmail.com</div>
+
+            <div class="contact-item">📱 Available for Internships & Full-Time Roles</div>
+
+            <div class="contact-item">⏱ Response within 24 Hours</div>
+
+        </div>
+
+        <!-- ================= CONTACT FORM (Formspree — no backend needed) ================= -->
+        <!--
+            Setup: create a free form at https://formspree.io, replace YOUR_FORM_ID
+            below with the ID Formspree gives you. Submissions land in your inbox
+            directly — recruiters don't need to open Gmail themselves.
+        -->
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xgogrlke" method="POST">
+
+            <div class="form-row">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+            </div>
+
+            <div class="form-row">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-row">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" rows="5" placeholder="Say hello, share an opportunity, or ask a question..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn form-submit">📨 Send Message</button>
+
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+
+        </form>
 
 
-        <div class="social">
+        <!-- ================= VISITOR COUNTER ================= -->
 
+        <div class="visitor-counter">
 
-            <a href="mailto:vivek25tech@gmail.com">
-                📧 Gmail
-            </a>
-
-
-            <a href="https://github.com/VivekShukla-2504">
-                GitHub
-            </a>
-
-
-            <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/">
-                LinkedIn
-            </a>
-
-
-            <a href="https://medium.com/@7800652515vivek">
-                Medium
-            </a>
-
+            <img src="https://komarev.com/ghpvc/?username=VivekShukla-2504&label=Profile%20Views&color=00d4ff&style=flat" alt="Profile views counter" width="180" height="20">
 
         </div>
 
 
     </section>
 
-
-
+    </main>
 
 
     <footer>
 
-        <p>
-            © 2026 Vivek Shukla
-        </p>
+        <p>Designed & Developed by Vivek Shukla ❤️</p>
+
+        <p class="footer-copy">© 2026 All Rights Reserved</p>
 
 
     </footer>
-
-
 
 
     <script src="script.js"></script>

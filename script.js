@@ -84,30 +84,35 @@ reveal();
 
 const header = document.querySelector("header");
 
+function getHeaderBg(scrolled) {
+
+    const styles = getComputedStyle(document.body);
+
+    return scrolled
+        ? styles.getPropertyValue("--header-bg-scrolled")
+        : styles.getPropertyValue("--header-bg");
+
+}
+
 window.addEventListener("scroll", () => {
 
     if (!header) return;
 
     if (window.scrollY > 60) {
 
-        header.style.background =
-            "rgba(5,8,22,.95)";
+        header.style.background = getHeaderBg(true);
 
-        header.style.backdropFilter =
-            "blur(18px)";
+        header.style.backdropFilter = "blur(18px)";
 
-        header.style.boxShadow =
-            "0 8px 25px rgba(0,0,0,.35)";
+        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.25)";
 
     }
 
     else {
 
-        header.style.background =
-            "rgba(5,8,22,.75)";
+        header.style.background = getHeaderBg(false);
 
-        header.style.boxShadow =
-            "none";
+        header.style.boxShadow = "none";
 
     }
 
@@ -158,12 +163,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function (e) {
 
-        e.preventDefault();
+        const targetId = this.getAttribute("href");
 
-        const target =
-            document.querySelector(this.getAttribute("href"));
+        if (targetId.length <= 1) return;
+
+        const target = document.querySelector(targetId);
 
         if (target) {
+
+            e.preventDefault();
 
             target.scrollIntoView({
 
@@ -178,42 +186,85 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// ================= CONTACT =================
+// ================= CONTACT FORM (Formspree — no backend needed) =================
 
-function sendMessage(e) {
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
-    e.preventDefault();
+if (contactForm) {
 
-    const msg =
-        document.getElementById("msg");
+    contactForm.addEventListener("submit", async (e) => {
 
-    if (!msg) return;
+        e.preventDefault();
 
-    msg.innerHTML =
-        "✅ Thank you! Your message has been sent.";
+        const submitBtn = contactForm.querySelector(".form-submit");
+        const originalLabel = submitBtn ? submitBtn.innerHTML : "";
 
-    msg.style.color = "#00d4ff";
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = "Sending...";
+        }
 
-    e.target.reset();
+        if (formStatus) {
+            formStatus.textContent = "";
+        }
 
-    setTimeout(() => {
+        try {
 
-        msg.innerHTML = "";
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: { "Accept": "application/json" }
+            });
 
-    }, 3000);
+            if (response.ok) {
+
+                if (formStatus) {
+                    formStatus.textContent = "✅ Thank you! Your message has been sent.";
+                    formStatus.style.color = "#00d4ff";
+                }
+
+                contactForm.reset();
+
+            } else {
+
+                if (formStatus) {
+                    formStatus.textContent = "⚠️ Something went wrong. Please email me directly at vivek25tech@gmail.com.";
+                    formStatus.style.color = "#ff6b6b";
+                }
+
+            }
+
+        } catch (err) {
+
+            if (formStatus) {
+                formStatus.textContent = "⚠️ Network error. Please email me directly at vivek25tech@gmail.com.";
+                formStatus.style.color = "#ff6b6b";
+            }
+
+        } finally {
+
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalLabel;
+            }
+
+        }
+
+    });
 
 }
 
 
 // ================= FOOTER =================
 
-const footer =
-    document.querySelector("footer p");
+const footerCopy =
+    document.querySelector(".footer-copy");
 
-if (footer) {
+if (footerCopy) {
 
-    footer.innerHTML =
-        `© ${new Date().getFullYear()} Vivek Shukla • All Rights Reserved`;
+    footerCopy.innerHTML =
+        `© ${new Date().getFullYear()} All Rights Reserved`;
 
 }
 
@@ -309,6 +360,8 @@ topBtn.innerHTML = "↑";
 
 topBtn.id = "topBtn";
 
+topBtn.setAttribute("aria-label", "Back to top");
+
 document.body.appendChild(topBtn);
 
 window.addEventListener("scroll", () => {
@@ -362,3 +415,224 @@ buttons.forEach(btn => {
     });
 
 });
+
+
+// ================= DARK / LIGHT MODE TOGGLE =================
+
+const themeToggle = document.getElementById("themeToggle");
+
+// Keep the mobile browser address bar color in sync with the current theme
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+function applyTheme(theme) {
+
+    if (theme === "light") {
+
+        document.body.classList.add("light-mode");
+
+        if (themeToggle) themeToggle.innerHTML = "☀";
+
+        if (themeColorMeta) themeColorMeta.setAttribute("content", "#f4f6fb");
+
+    } else {
+
+        document.body.classList.remove("light-mode");
+
+        if (themeToggle) themeToggle.innerHTML = "🌙";
+
+        if (themeColorMeta) themeColorMeta.setAttribute("content", "#050816");
+
+    }
+
+    if (header) {
+
+        header.style.background = getHeaderBg(window.scrollY > 60);
+
+    }
+
+}
+
+// First-time visitors: respect their OS/browser preference.
+// Returning visitors: always honour whatever they picked manually last time.
+const storedTheme = localStorage.getItem("portfolio-theme");
+
+const prefersLight =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: light)").matches;
+
+const savedTheme = storedTheme || (prefersLight ? "light" : "dark");
+
+applyTheme(savedTheme);
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        const isLight = document.body.classList.contains("light-mode");
+
+        const nextTheme = isLight ? "dark" : "light";
+
+        applyTheme(nextTheme);
+
+        localStorage.setItem("portfolio-theme", nextTheme);
+
+    });
+
+}
+
+// If the visitor never manually chose a theme, keep following the OS setting live
+if (!storedTheme && window.matchMedia) {
+
+    window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+
+        if (localStorage.getItem("portfolio-theme")) return; // user has since made a manual choice
+
+        applyTheme(e.matches ? "light" : "dark");
+
+    });
+
+}
+
+
+// ================= MOBILE NAV TOGGLE =================
+
+const navToggle = document.getElementById("navToggle");
+const navLinksEl = document.getElementById("navLinks");
+const navOverlay = document.getElementById("navOverlay");
+
+function closeMobileNav() {
+
+    if (!navToggle || !navLinksEl || !navOverlay) return;
+
+    navToggle.classList.remove("open");
+
+    navLinksEl.classList.remove("open");
+
+    navOverlay.classList.remove("show");
+
+    navToggle.setAttribute("aria-expanded", "false");
+
+}
+
+function openMobileNav() {
+
+    if (!navToggle || !navLinksEl || !navOverlay) return;
+
+    navToggle.classList.add("open");
+
+    navLinksEl.classList.add("open");
+
+    navOverlay.classList.add("show");
+
+    navToggle.setAttribute("aria-expanded", "true");
+
+}
+
+if (navToggle) {
+
+    navToggle.addEventListener("click", () => {
+
+        const isOpen = navLinksEl.classList.contains("open");
+
+        isOpen ? closeMobileNav() : openMobileNav();
+
+    });
+
+}
+
+if (navOverlay) {
+
+    navOverlay.addEventListener("click", closeMobileNav);
+
+}
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", closeMobileNav);
+
+});
+
+
+// ================= HERO STAT COUNTERS =================
+
+const counters = document.querySelectorAll(".counter");
+let countersStarted = false;
+
+function animateCounters() {
+
+    counters.forEach(counter => {
+
+        const target = +counter.dataset.target;
+        const duration = 1200;
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        let current = 0;
+
+        const timer = setInterval(() => {
+
+            current += increment;
+
+            if (current >= target) {
+
+                counter.innerText = target;
+
+                clearInterval(timer);
+
+            } else {
+
+                counter.innerText = Math.floor(current);
+
+            }
+
+        }, stepTime);
+
+    });
+
+}
+
+function checkCounters() {
+
+    const statsSection = document.querySelector(".stats");
+
+    if (!statsSection || countersStarted) return;
+
+    const top = statsSection.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 100) {
+
+        countersStarted = true;
+
+        animateCounters();
+
+    }
+
+}
+
+window.addEventListener("scroll", checkCounters);
+checkCounters();
+
+
+// ================= RESUME DOWNLOAD COUNTER (private, for your own tracking) =================
+// Stored only in this browser's localStorage — visitors never see it.
+// Open the browser console on your own device to check the count anytime:
+//   localStorage.getItem('resumeDownloadCount')
+
+const resumeBtn = document.getElementById("resumeBtn");
+
+if (resumeBtn) {
+
+    resumeBtn.addEventListener("click", () => {
+
+        const current = parseInt(localStorage.getItem("resumeDownloadCount") || "0", 10);
+
+        const updated = current + 1;
+
+        localStorage.setItem("resumeDownloadCount", updated);
+
+        console.log(`📄 Resume downloaded ${updated} time(s) on this browser.`);
+
+    });
+
+}
