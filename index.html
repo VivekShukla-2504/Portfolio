@@ -92,11 +92,58 @@
                     <span class="theme-icon">🌙</span>
                 </button>
 
-                <!-- RESUME DOWNLOAD -->
-                <a href="FAANG_SDE.pdf" download="Vivek_Shukla_Resume.pdf" class="nav-cta-btn" id="navResumeBtn">
-                    <span>Resume</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                </a>
+                <!-- RESUME DOWNLOAD & MULTI-ROLE SELECTOR -->
+                <div class="nav-resume-wrapper" id="navResumeWrapper">
+                    <button type="button" class="nav-cta-btn" id="navResumeBtn" aria-expanded="false" aria-haspopup="dialog" title="View &amp; Download Resumes for 4 Roles">
+                        <span>Resume</span>
+                        <span class="nav-resume-badge">4 Roles</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <!-- Quick Dropdown Menu -->
+                    <div class="nav-resume-dropdown" id="navResumeDropdown">
+                        <div class="resume-dropdown-header">
+                            <span class="rd-title">Targeted Resumes</span>
+                            <span class="rd-subtitle">Select by role focus</span>
+                        </div>
+                        <a href="FAANG_SDE.pdf" target="_blank" rel="noopener" class="resume-dropdown-item">
+                            <span class="r-icon">💻</span>
+                            <div class="r-info">
+                                <span class="r-name">FAANG SDE / Full-Stack</span>
+                                <span class="r-meta">Java DSA • MERN • Systems</span>
+                            </div>
+                            <span class="r-action">View ↗</span>
+                        </a>
+                        <a href="AI_ML-RESUME.pdf" target="_blank" rel="noopener" class="resume-dropdown-item">
+                            <span class="r-icon">🤖</span>
+                            <div class="r-info">
+                                <span class="r-name">AI &amp; Machine Learning</span>
+                                <span class="r-meta">LangGraph • Agents • NLP</span>
+                            </div>
+                            <span class="r-action">View ↗</span>
+                        </a>
+                        <a href="ANALYST_RESUME.pdf" target="_blank" rel="noopener" class="resume-dropdown-item">
+                            <span class="r-icon">📊</span>
+                            <div class="r-info">
+                                <span class="r-name">Data &amp; Risk Analyst</span>
+                                <span class="r-meta">Actuarial • Pandas • SQL</span>
+                            </div>
+                            <span class="r-action">View ↗</span>
+                        </a>
+                        <a href="Resume_BDC.pdf" target="_blank" rel="noopener" class="resume-dropdown-item">
+                            <span class="r-icon">💼</span>
+                            <div class="r-info">
+                                <span class="r-name">Business Development</span>
+                                <span class="r-meta">Stakeholder • Growth • Client</span>
+                            </div>
+                            <span class="r-action">View ↗</span>
+                        </a>
+                        <div class="resume-dropdown-footer">
+                            <button type="button" id="openResumeModalFromNav" class="btn-open-resume-hub">
+                                <span>⚡ Open Multi-Role Resume Hub</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- MOBILE HAMBURGER -->
                 <button id="navToggle" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -194,9 +241,10 @@
                             <span>🚀 Explore Projects</span>
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                         </a>
-                        <a href="FAANG_SDE.pdf" download="Vivek_Shukla_Resume.pdf" class="btn btn-secondary" id="resumeBtn">
-                            <span>📄 View Resume</span>
-                        </a>
+                        <button type="button" class="btn btn-secondary" id="resumeBtn" title="Select from 4 role-tailored resumes">
+                            <span>📄 View Resumes (4 Roles)</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
                         <button type="button" class="btn btn-terminal" id="toggleTerminalBtn" title="Launch Interactive Terminal">
                             <span>💻 Open CLI</span>
                         </button>
@@ -1549,6 +1597,192 @@
             <button type="button" class="detail-close-btn" id="detailCloseBtn" aria-label="Close modal">✕</button>
             <div class="detail-content" id="detailContent">
                 <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 4. MULTI-ROLE TARGETED RESUME HUB MODAL ================= -->
+    <div id="resumeHubModal" class="detail-backdrop resume-modal-backdrop" role="dialog" aria-modal="true" aria-label="Targeted Resumes by Role">
+        <div class="detail-dialog resume-modal-dialog">
+            <button type="button" class="detail-close-btn" id="resumeModalCloseBtn" aria-label="Close modal">✕</button>
+            
+            <div class="resume-hub-header">
+                <div class="resume-hub-badge">
+                    <span class="pulse-dot"></span>
+                    <span>4 Domain-Tailored Profiles</span>
+                </div>
+                <h2 class="resume-hub-title">Targeted Resumes by Role</h2>
+                <p class="resume-hub-subtitle">
+                    Select the specialized resume tailored for your hiring needs — from distributed full-stack engineering to autonomous AI agents, quantitative data analytics, and consultative business development.
+                </p>
+            </div>
+
+            <div class="resume-cards-grid">
+
+                <!-- 1. FAANG SDE / FULL-STACK -->
+                <div class="resume-role-card role-sde">
+                    <div class="role-card-header">
+                        <div class="role-icon-box sde-icon">💻</div>
+                        <div class="role-header-info">
+                            <span class="role-tag tag-sde">Systems &amp; Full-Stack</span>
+                            <h3 class="role-title">FAANG SDE / Software Engineer</h3>
+                        </div>
+                    </div>
+                    <p class="role-desc">
+                        Engineered for SDE 1/2 roles. Focuses on 400+ Java DSA problems solved, distributed full-stack web platforms, REST APIs, and system reliability.
+                    </p>
+                    <div class="role-highlights">
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Featured:</strong> GenPrep AI, TransitOps Fleet Platform, CertChain Web3</span>
+                        </div>
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Core:</strong> Java DSA, React, Node.js, Express, MongoDB Atlas, JWT</span>
+                        </div>
+                    </div>
+                    <div class="role-skill-tags">
+                        <span>Java DSA</span>
+                        <span>React.js</span>
+                        <span>Node / Express</span>
+                        <span>MongoDB</span>
+                        <span>REST APIs</span>
+                    </div>
+                    <div class="role-card-actions">
+                        <a href="FAANG_SDE.pdf" target="_blank" rel="noopener" class="btn-role-view" title="Open PDF in new tab">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span>View Online</span>
+                        </a>
+                        <a href="FAANG_SDE.pdf" download="Vivek_Shukla_SDE_Resume.pdf" class="btn-role-download" title="Download SDE Resume">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. AI & MACHINE LEARNING -->
+                <div class="resume-role-card role-ai">
+                    <div class="role-card-header">
+                        <div class="role-icon-box ai-icon">🤖</div>
+                        <div class="role-header-info">
+                            <span class="role-tag tag-ai">Agentic AI &amp; Machine Learning</span>
+                            <h3 class="role-title">AI &amp; Machine Learning Engineer</h3>
+                        </div>
+                    </div>
+                    <p class="role-desc">
+                        Tailored for AI/ML and GenAI roles. Highlights autonomous LangGraph agents, tool-calling pipelines, deterministic guardrails, and NLP classifiers.
+                    </p>
+                    <div class="role-highlights">
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Featured:</strong> Autonomous AI Support Agent, SMS Spam Classifier, Codex Top 30%</span>
+                        </div>
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Core:</strong> LangGraph, FastAPI, Python, SSE Streams, Docker, TF-IDF</span>
+                        </div>
+                    </div>
+                    <div class="role-skill-tags">
+                        <span>LangGraph</span>
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>Prompt Defense</span>
+                        <span>Docker</span>
+                    </div>
+                    <div class="role-card-actions">
+                        <a href="AI_ML-RESUME.pdf" target="_blank" rel="noopener" class="btn-role-view" title="Open PDF in new tab">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span>View Online</span>
+                        </a>
+                        <a href="AI_ML-RESUME.pdf" download="Vivek_Shukla_AI_ML_Resume.pdf" class="btn-role-download" title="Download AI/ML Resume">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. DATA & QUANTITATIVE ANALYST -->
+                <div class="resume-role-card role-data">
+                    <div class="role-card-header">
+                        <div class="role-icon-box data-icon">📊</div>
+                        <div class="role-header-info">
+                            <span class="role-tag tag-data">Risk &amp; Quantitative Analytics</span>
+                            <h3 class="role-title">Data &amp; Quantitative Risk Analyst</h3>
+                        </div>
+                    </div>
+                    <p class="role-desc">
+                        Tailored for Data Analyst and Quantitative Risk positions. Features actuarial risk calculations, loss ratio modeling, Pandas/NumPy pipelines, and SQL.
+                    </p>
+                    <div class="role-highlights">
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Featured:</strong> Insurance Risk &amp; Premium Analytics, 11,000+ Record Audit</span>
+                        </div>
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Core:</strong> Python, Pandas, NumPy, SQL, Actuarial Math, VLOOKUP, MIS</span>
+                        </div>
+                    </div>
+                    <div class="role-skill-tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>SQL</span>
+                        <span>Actuarial Math</span>
+                        <span>MIS Auditing</span>
+                    </div>
+                    <div class="role-card-actions">
+                        <a href="ANALYST_RESUME.pdf" target="_blank" rel="noopener" class="btn-role-view" title="Open PDF in new tab">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span>View Online</span>
+                        </a>
+                        <a href="ANALYST_RESUME.pdf" download="Vivek_Shukla_Data_Analyst_Resume.pdf" class="btn-role-download" title="Download Data Analyst Resume">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. BUSINESS DEVELOPMENT & COUNSELING -->
+                <div class="resume-role-card role-bdc">
+                    <div class="role-card-header">
+                        <div class="role-icon-box bdc-icon">💼</div>
+                        <div class="role-header-info">
+                            <span class="role-tag tag-bdc">Growth Strategy &amp; Client Relations</span>
+                            <h3 class="role-title">Business Development &amp; Counseling</h3>
+                        </div>
+                    </div>
+                    <p class="role-desc">
+                        Tailored for Business Development, Client Counseling, and Operations. Highlights consultative stakeholder management, pipeline tracking, and revenue growth.
+                    </p>
+                    <div class="role-highlights">
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Featured:</strong> 1.3–1.4× Sales Increase, 70+ Stakeholders, 1st in Sales Appraisal</span>
+                        </div>
+                        <div class="role-hl-item">
+                            <span class="hl-bullet">▹</span>
+                            <span><strong>Core:</strong> Stakeholder Coordination, Needs Assessment, Client Counseling, KPI Tracking</span>
+                        </div>
+                    </div>
+                    <div class="role-skill-tags">
+                        <span>Stakeholder Mgmt</span>
+                        <span>Client Counseling</span>
+                        <span>Sales Growth</span>
+                        <span>Pipeline Mgmt</span>
+                        <span>KPI Delivery</span>
+                    </div>
+                    <div class="role-card-actions">
+                        <a href="Resume_BDC.pdf" target="_blank" rel="noopener" class="btn-role-view" title="Open PDF in new tab">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span>View Online</span>
+                        </a>
+                        <a href="Resume_BDC.pdf" download="Vivek_Shukla_Business_Dev_Resume.pdf" class="btn-role-download" title="Download Business Development Resume">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

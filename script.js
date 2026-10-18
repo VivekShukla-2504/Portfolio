@@ -209,13 +209,66 @@ document.addEventListener("DOMContentLoaded", () => {
     if (copyBtnHero) copyBtnHero.addEventListener("click", copyEmail);
     if (copyBtnContact) copyBtnContact.addEventListener("click", copyEmail);
 
-    function downloadResume() {
+    const ROLE_RESUMES = {
+        sde: {
+            file: "FAANG_SDE.pdf",
+            downloadName: "Vivek_Shukla_SDE_Resume.pdf",
+            title: "FAANG SDE / Full-Stack Resume"
+        },
+        aiml: {
+            file: "AI_ML-RESUME.pdf",
+            downloadName: "Vivek_Shukla_AI_ML_Resume.pdf",
+            title: "AI & Machine Learning Resume"
+        },
+        analyst: {
+            file: "ANALYST_RESUME.pdf",
+            downloadName: "Vivek_Shukla_Data_Analyst_Resume.pdf",
+            title: "Data & Quantitative Analyst Resume"
+        },
+        bdc: {
+            file: "Resume_BDC.pdf",
+            downloadName: "Vivek_Shukla_Business_Dev_Resume.pdf",
+            title: "Business Development Resume"
+        }
+    };
+
+    function downloadRoleResume(roleKey) {
+        const item = ROLE_RESUMES[roleKey] || ROLE_RESUMES.sde;
         playClickSound();
         const link = document.createElement("a");
-        link.href = "FAANG_SDE.pdf";
-        link.download = "Vivek_Shukla_Resume.pdf";
+        link.href = item.file;
+        link.download = item.downloadName;
+        document.body.appendChild(link);
         link.click();
-        showToast("📄 Downloading Vivek Shukla's Resume...");
+        document.body.removeChild(link);
+        showToast(`📄 Downloading ${item.title}...`);
+        const count = parseInt(localStorage.getItem(`resumeCount_${roleKey}`) || "0", 10) + 1;
+        localStorage.setItem(`resumeCount_${roleKey}`, count);
+    }
+
+    function openResumeModal() {
+        playChimeSound();
+        const modal = document.getElementById("resumeHubModal");
+        if (modal) {
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+        }
+    }
+
+    function closeResumeModal() {
+        const modal = document.getElementById("resumeHubModal");
+        if (modal) {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    }
+
+    function downloadResume(role = null) {
+        if (role && ROLE_RESUMES[role]) {
+            downloadRoleResume(role);
+        } else {
+            openResumeModal();
+        }
     }
 
 
@@ -527,6 +580,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // =========================================================================
+    // 4B. MULTI-ROLE RESUME HUB MODAL LISTENERS
+    // =========================================================================
+    const resumeHubModal = document.getElementById("resumeHubModal");
+    const resumeModalCloseBtn = document.getElementById("resumeModalCloseBtn");
+    const navResumeBtn = document.getElementById("navResumeBtn");
+    const resumeBtn = document.getElementById("resumeBtn");
+    const openResumeModalFromNav = document.getElementById("openResumeModalFromNav");
+
+    if (resumeModalCloseBtn) {
+        resumeModalCloseBtn.addEventListener("click", closeResumeModal);
+    }
+
+    if (resumeHubModal) {
+        resumeHubModal.addEventListener("click", (e) => {
+            if (e.target === resumeHubModal) {
+                closeResumeModal();
+            }
+        });
+    }
+
+    if (navResumeBtn) {
+        navResumeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openResumeModal();
+        });
+    }
+
+    if (resumeBtn) {
+        resumeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openResumeModal();
+        });
+    }
+
+    if (openResumeModalFromNav) {
+        openResumeModalFromNav.addEventListener("click", (e) => {
+            e.preventDefault();
+            openResumeModal();
+        });
+    }
+
 
     // =========================================================================
     // 5. INTERACTIVE COMMAND PALETTE (Ctrl+K / ⌘K)
@@ -551,7 +646,11 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "tool-terminal", title: "Open Developer CLI Terminal", group: "Interactive Tools", icon: "💻", badge: "CLI", action: () => openTerminal() },
         { id: "tool-theme", title: "Toggle Dark / Light Theme", group: "Interactive Tools", icon: "🌓", badge: "Theme", action: () => toggleTheme() },
         { id: "tool-sound", title: "Toggle UI Haptic Sound Effects", group: "Interactive Tools", icon: "🔊", badge: "Haptics", action: () => toggleSound() },
-        { id: "tool-resume", title: "Download Resume (PDF)", group: "Interactive Tools", icon: "📄", badge: "Download", action: () => downloadResume() },
+        { id: "tool-resume-hub", title: "Targeted Resumes Hub — View All 4 Specialized Roles", group: "Targeted Resumes", icon: "📄", badge: "Hub", action: () => openResumeModal() },
+        { id: "tool-resume-sde", title: "Download SDE Resume (FAANG & Systems)", group: "Targeted Resumes", icon: "💻", badge: "PDF", action: () => downloadRoleResume("sde") },
+        { id: "tool-resume-aiml", title: "Download AI/ML Resume (LangGraph & Agents)", group: "Targeted Resumes", icon: "🤖", badge: "PDF", action: () => downloadRoleResume("aiml") },
+        { id: "tool-resume-analyst", title: "Download Data Analyst Resume (Risk & Actuarial)", group: "Targeted Resumes", icon: "📊", badge: "PDF", action: () => downloadRoleResume("analyst") },
+        { id: "tool-resume-bdc", title: "Download Business Dev Resume (Strategy & Growth)", group: "Targeted Resumes", icon: "💼", badge: "PDF", action: () => downloadRoleResume("bdc") },
         { id: "tool-email", title: "Copy Email: vivek25tech@gmail.com", group: "Interactive Tools", icon: "📋", badge: "Clipboard", action: () => copyEmail() },
         { id: "tool-phone", title: "Copy Phone: +91 8840243403", group: "Interactive Tools", icon: "📞", badge: "Clipboard", action: () => copyPhone() },
 
@@ -796,7 +895,7 @@ document.addEventListener("DOMContentLoaded", () => {
   • <span class="term-hl">contact</span>       : Direct communication channels &amp; social profiles
   • <span class="term-hl">theme</span>         : Toggle dark/light display mode ('theme dark' or 'theme light')
   • <span class="term-hl">sound</span>         : Toggle UI audio haptics ('sound on' or 'sound off')
-  • <span class="term-hl">resume</span>        : Trigger instant download of Vivek's resume PDF
+  • <span class="term-hl">resume &lt;role&gt;</span> : Multi-role resume hub (or 'resume sde|aiml|analyst|bdc')
   • <span class="term-hl">sudo hire</span>     : Run executive engineering onboarding sequence
   • <span class="term-hl">clear</span>         : Clear terminal buffer
   • <span class="term-hl">exit</span>          : Close terminal window
@@ -934,10 +1033,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 break;
 
-            case "resume":
-                downloadResume();
-                appendTerminalOutput("Initiated download for Vivek_Shukla_Resume.pdf.");
+            case "resume": {
+                const subCmd = (arg || "").toLowerCase();
+                if (subCmd === "sde") {
+                    downloadRoleResume("sde");
+                    appendTerminalOutput("💻 Initiated download for FAANG SDE Resume (FAANG_SDE.pdf).");
+                } else if (subCmd === "ai" || subCmd === "aiml" || subCmd === "ml") {
+                    downloadRoleResume("aiml");
+                    appendTerminalOutput("🤖 Initiated download for AI/ML Resume (AI_ML-RESUME.pdf).");
+                } else if (subCmd === "analyst" || subCmd === "data") {
+                    downloadRoleResume("analyst");
+                    appendTerminalOutput("📊 Initiated download for Data Analyst Resume (ANALYST_RESUME.pdf).");
+                } else if (subCmd === "bdc" || subCmd === "business") {
+                    downloadRoleResume("bdc");
+                    appendTerminalOutput("💼 Initiated download for Business Development Resume (Resume_BDC.pdf).");
+                } else {
+                    openResumeModal();
+                    appendTerminalOutput(`
+<div style="background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.25); padding: 12px; border-radius: 6px; margin: 8px 0; font-family: var(--font-mono);">
+  ✨ <strong style="color: var(--accent1);">Multi-Role Resume Hub Opened in Modal</strong><br>
+  Targeted CLI direct downloads:<br>
+  &gt; <span class="term-hl">resume sde</span>      : FAANG SDE &amp; Systems Engineer<br>
+  &gt; <span class="term-hl">resume aiml</span>     : AI &amp; Machine Learning Engineer<br>
+  &gt; <span class="term-hl">resume analyst</span>  : Data &amp; Quantitative Risk Analyst<br>
+  &gt; <span class="term-hl">resume bdc</span>      : Business Development &amp; Counseling
+</div>
+                    `);
+                }
                 break;
+            }
 
             case "hire":
             case "sudo":
@@ -1033,6 +1157,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             if (projectDetailModal && projectDetailModal.classList.contains("show")) {
                 closeArchitectureModal();
+            }
+            if (resumeHubModal && resumeHubModal.classList.contains("show")) {
+                closeResumeModal();
             }
         }
     });
@@ -1397,13 +1524,12 @@ document.addEventListener("DOMContentLoaded", () => {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    const resumeBtns = [document.getElementById("resumeBtn"), document.getElementById("navResumeBtn")];
-    resumeBtns.forEach(btn => {
+    const resumeTelemetryBtns = [document.getElementById("resumeBtn"), document.getElementById("navResumeBtn")];
+    resumeTelemetryBtns.forEach(btn => {
         if (!btn) return;
         btn.addEventListener("click", () => {
-            playClickSound();
-            const count = parseInt(localStorage.getItem("resumeDownloadCount") || "0", 10) + 1;
-            localStorage.setItem("resumeDownloadCount", count);
+            const count = parseInt(localStorage.getItem("resumeHubOpenCount") || "0", 10) + 1;
+            localStorage.setItem("resumeHubOpenCount", count);
         });
     });
 
