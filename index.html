@@ -28,8 +28,7 @@
     <meta name="twitter:description" content="MCA @ JNU Delhi. Full-Stack Developer &amp; AI Specialist. 400+ DSA Problems Solved in Java.">
     <meta name="twitter:image" content="https://vivekshukla.dev/profile.png">
 
-    <!-- ================= HIGH-RES SVG DATA FAVICON ================= -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2307090e'/><path d='M26 36 L44 50 L26 64' stroke='%2300d4ff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/><path d='M50 64 L74 64' stroke='%238b5cf6' stroke-width='8' stroke-linecap='round'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2307090e'/%3E%3Cpath d='M26 36 L44 50 L26 64' stroke='%2300d4ff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M50 64 L74 64' stroke='%238b5cf6' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
 
     <!-- ================= STYLESHEET ================= -->
     <link rel="stylesheet" href="style.css">
@@ -37,7 +36,7 @@
     <!-- ================= GOOGLE FONTS ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -46,7 +45,8 @@
     <!-- ================= SKIP LINK (Accessibility) ================= -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ================= AMBIENT CANVAS BACKGROUND ================= -->
+    <!-- ================= AMBIENT CANVAS & HIGH-TECH CYBER GRID ================= -->
+    <div class="cyber-grid" aria-hidden="true"></div>
     <div class="ambient-glow glow-1" aria-hidden="true"></div>
     <div class="ambient-glow glow-2" aria-hidden="true"></div>
     <div class="ambient-glow glow-3" aria-hidden="true"></div>
@@ -60,6 +60,13 @@
                 <span class="logo-code">&lt;</span>Vivek<span class="logo-accent">Shukla</span><span class="logo-code">/&gt;</span>
                 <span class="logo-dot"></span>
             </a>
+
+            <!-- QUICK COMMAND PALETTE TRIGGER (Linear / Raycast Style) -->
+            <button class="cmd-k-trigger" id="cmdKTrigger" aria-label="Open Command Palette" title="Press Ctrl+K or ⌘K">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span class="cmd-k-text">Command Menu</span>
+                <kbd class="cmd-k-kbd">Ctrl K</kbd>
+            </button>
 
             <ul id="navLinks" class="nav-menu">
                 <li><a href="#home" class="nav-item">Home</a></li>
@@ -75,15 +82,23 @@
 
             <div class="nav-actions">
 
+                <!-- SOUND FX TOGGLE -->
+                <button id="soundToggle" class="sound-toggle-btn" aria-label="Toggle UI Sound Effects" title="UI Sound Effects (Muted)">
+                    <span class="sound-icon">🔇</span>
+                </button>
+
+                <!-- THEME TOGGLE -->
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+
+                <!-- RESUME DOWNLOAD -->
                 <a href="resume.pdf" download class="nav-cta-btn" id="navResumeBtn">
                     <span>Resume</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
 
-                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle theme">
-                    <span class="theme-icon">🌙</span>
-                </button>
-
+                <!-- MOBILE HAMBURGER -->
                 <button id="navToggle" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -106,10 +121,30 @@
 
             <div class="hero-layout">
 
+                <!-- AVATAR & 3D FLOATING TECH ORBITS -->
                 <div class="hero-image-col">
                     <div class="avatar-card">
                         <div class="avatar-orbit"></div>
                         <div class="avatar-ring"></div>
+                        
+                        <!-- Floating Glass Badges -->
+                        <div class="floating-badge badge-orbit-1" title="React 19 Frontend">
+                            <span class="badge-tech-icon">⚛️</span>
+                            <span class="badge-tech-text">React 19</span>
+                        </div>
+                        <div class="floating-badge badge-orbit-2" title="FastAPI Async Backend">
+                            <span class="badge-tech-icon">🐍</span>
+                            <span class="badge-tech-text">FastAPI</span>
+                        </div>
+                        <div class="floating-badge badge-orbit-3" title="LangGraph Autonomous Agents">
+                            <span class="badge-tech-icon">🤖</span>
+                            <span class="badge-tech-text">LangGraph</span>
+                        </div>
+                        <div class="floating-badge badge-orbit-4" title="Java DSA 400+ Solved">
+                            <span class="badge-tech-icon">☕</span>
+                            <span class="badge-tech-text">Java DSA</span>
+                        </div>
+
                         <div class="avatar-wrapper">
                             <img src="profile.png" alt="Vivek Shukla, Software Development Engineer and AI Enthusiast portrait" width="320" height="320" fetchpriority="high">
                         </div>
@@ -120,6 +155,7 @@
                     </div>
                 </div>
 
+                <!-- HERO CONTENT -->
                 <div class="hero-content-col">
 
                     <div class="status-pill">
@@ -161,6 +197,9 @@
                         <a href="resume.pdf" download class="btn btn-secondary" id="resumeBtn">
                             <span>📄 View Resume</span>
                         </a>
+                        <button type="button" class="btn btn-terminal" id="toggleTerminalBtn" title="Launch Interactive Terminal">
+                            <span>💻 Open CLI</span>
+                        </button>
                         <a href="#contact" class="btn btn-outline">
                             <span>🤝 Let's Connect</span>
                         </a>
@@ -456,7 +495,7 @@
             <div class="project-grid" id="projectGrid">
 
                 <!-- 1. AI Customer Support Agent -->
-                <div class="project-card" data-category="ai">
+                <div class="project-card" data-category="ai" id="card-ai-support">
                     <div class="card-glow-track"></div>
                     <div class="card-header-meta">
                         <span class="domain-tag tag-ai">🤖 Autonomous AI Agent</span>
@@ -476,15 +515,17 @@
                         <span class="tag-item">SQLite</span>
                     </div>
                     <div class="card-actions">
-                        <a href="https://github.com/VivekShukla-2504/AI-Customer-Support-Agent" target="_blank" rel="noopener" class="btn-project btn-github-only">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            <span>View Source Code</span>
+                        <button type="button" class="btn-project btn-arch" data-project-id="ai-support">
+                            <span>⚡ Architecture</span>
+                        </button>
+                        <a href="https://github.com/VivekShukla-2504/AI-Customer-Support-Agent" target="_blank" rel="noopener" class="btn-project btn-github">
+                            <span>🔗 Source</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- 2. Gen AI Interview Platform -->
-                <div class="project-card" data-category="ai">
+                <div class="project-card" data-category="ai" id="card-gen-ai">
                     <div class="card-glow-track"></div>
                     <div class="card-header-meta">
                         <span class="domain-tag tag-ai">🤖 Generative AI</span>
@@ -507,14 +548,17 @@
                         <a href="https://gen-ai-theta-roan.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
                             <span>🚀 Live Demo</span>
                         </a>
+                        <button type="button" class="btn-project btn-arch" data-project-id="gen-ai">
+                            <span>⚡ Arch</span>
+                        </button>
                         <a href="https://github.com/VivekShukla-2504/Gen-AI" target="_blank" rel="noopener" class="btn-project btn-github">
-                            <span>🔗 Source</span>
+                            <span>🔗 Code</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- 3. ResearchPaper AI -->
-                <div class="project-card" data-category="ai">
+                <div class="project-card" data-category="ai" id="card-research-ai">
                     <div class="card-glow-track"></div>
                     <div class="card-header-meta">
                         <span class="domain-tag tag-ai">🤖 NLP &amp; Recommender</span>
@@ -537,14 +581,17 @@
                         <a href="https://research-ai-opal-two.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
                             <span>🚀 Live Demo</span>
                         </a>
+                        <button type="button" class="btn-project btn-arch" data-project-id="research-ai">
+                            <span>⚡ Arch</span>
+                        </button>
                         <a href="https://github.com/VivekShukla-2504/ResearchAI-" target="_blank" rel="noopener" class="btn-project btn-github">
-                            <span>🔗 Source</span>
+                            <span>🔗 Code</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- 4. TransitOps Platform -->
-                <div class="project-card" data-category="fullstack">
+                <div class="project-card" data-category="fullstack" id="card-transitops">
                     <div class="card-glow-track"></div>
                     <div class="card-header-meta">
                         <span class="domain-tag tag-fullstack">⚡ Full-Stack Platform</span>
@@ -567,14 +614,17 @@
                         <a href="https://transit-deploy-liart.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
                             <span>🚀 Live Demo</span>
                         </a>
+                        <button type="button" class="btn-project btn-arch" data-project-id="transitops">
+                            <span>⚡ Arch</span>
+                        </button>
                         <a href="https://github.com/VivekShukla-2504/Transit-Deploy-" target="_blank" rel="noopener" class="btn-project btn-github">
-                            <span>🔗 Source</span>
+                            <span>🔗 Code</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- 5. Insurance Risk & Premium Analytics -->
-                <div class="project-card" data-category="data">
+                <div class="project-card" data-category="data" id="card-insurance">
                     <div class="card-glow-track"></div>
                     <div class="card-header-meta">
                         <span class="domain-tag tag-data">📊 FinTech &amp; Actuarial</span>
@@ -597,14 +647,17 @@
                         <a href="https://risk-and-premium-analysis.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
                             <span>🚀 Live Demo</span>
                         </a>
+                        <button type="button" class="btn-project btn-arch" data-project-id="insurance">
+                            <span>⚡ Arch</span>
+                        </button>
                         <a href="https://github.com/VivekShukla-2504/Risk-and-Premium-Analysis" target="_blank" rel="noopener" class="btn-project btn-github">
-                            <span>🔗 Source</span>
+                            <span>🔗 Code</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- 6. CertChain -->
-                <div class="project-card" data-category="web3">
+                <div class="project-card" data-category="web3" id="card-certchain">
                     <div class="card-glow-track"></div>
                     <div class="card-header-meta">
                         <span class="domain-tag tag-web3">⛓️ Web3 &amp; Blockchain</span>
@@ -627,8 +680,11 @@
                         <a href="https://certchain-puce.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
                             <span>🚀 Live Demo</span>
                         </a>
+                        <button type="button" class="btn-project btn-arch" data-project-id="certchain">
+                            <span>⚡ Arch</span>
+                        </button>
                         <a href="https://github.com/VivekShukla-2504/CERTCHAIN" target="_blank" rel="noopener" class="btn-project btn-github">
-                            <span>🔗 Source</span>
+                            <span>🔗 Code</span>
                         </a>
                     </div>
                 </div>
@@ -1052,15 +1108,16 @@
 
         </section>
 
-        <!-- ================= CODING PROFILES & LIVE STATS ================= -->
+        <!-- ================= CODING PROFILES & DSA MASTERY WIDGET ================= -->
         <section id="coding" class="section reveal">
 
             <div class="section-header">
-                <span class="section-tag">PROOF OF WORK</span>
-                <h2 class="section-title">Coding Profiles &amp; Telemetry</h2>
-                <p class="section-subtitle">Explore live competitive programming profiles, code repositories, and technical writing.</p>
+                <span class="section-tag">PROOF OF WORK &amp; ALGORITHMS</span>
+                <h2 class="section-title">Coding Profiles &amp; DSA Mastery</h2>
+                <p class="section-subtitle">Comprehensive competitive programming metrics, algorithmic mastery breakdown, and live GitHub telemetry.</p>
             </div>
 
+            <!-- PROFILES GRID -->
             <div class="coding-profiles-grid">
 
                 <a href="https://leetcode.com/u/Vivek_Shukla_25/" target="_blank" rel="noopener" class="coding-card">
@@ -1133,6 +1190,81 @@
                     <span class="external-arrow">↗</span>
                 </a>
 
+            </div>
+
+            <!-- FAANG SDE SPECIAL: DSA TOPIC BREAKDOWN & MASTERY WIDGET -->
+            <div class="dsa-mastery-card">
+                <div class="card-glow-track"></div>
+                <div class="dsa-header">
+                    <div>
+                        <span class="dsa-badge">FAANG SDE METRICS</span>
+                        <h3 class="dsa-title">Algorithmic Problem Solving Breakdown (Java)</h3>
+                    </div>
+                    <div class="dsa-total-pill">
+                        <span class="dsa-num">400+</span>
+                        <span class="dsa-lbl">Total Solved</span>
+                    </div>
+                </div>
+
+                <div class="dsa-metrics-row">
+                    <!-- Difficulty split -->
+                    <div class="difficulty-split">
+                        <div class="diff-card diff-easy">
+                            <span class="diff-tag">Easy</span>
+                            <span class="diff-count">160+</span>
+                            <div class="diff-bar"><div class="diff-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="diff-card diff-medium">
+                            <span class="diff-tag">Medium</span>
+                            <span class="diff-count">210+</span>
+                            <div class="diff-bar"><div class="diff-fill" style="width: 78%;"></div></div>
+                        </div>
+                        <div class="diff-card diff-hard">
+                            <span class="diff-tag">Hard</span>
+                            <span class="diff-count">30+</span>
+                            <div class="diff-bar"><div class="diff-fill" style="width: 45%;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Topic proficiency meters -->
+                    <div class="topic-bars">
+                        <div class="topic-bar-item">
+                            <div class="topic-info">
+                                <span>🌲 Trees &amp; Binary Search Trees</span>
+                                <span class="topic-pct">95%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="topic-bar-item">
+                            <div class="topic-info">
+                                <span>📈 Dynamic Programming &amp; Memoization</span>
+                                <span class="topic-pct">90%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="topic-bar-item">
+                            <div class="topic-info">
+                                <span>🕸️ Graphs, BFS/DFS &amp; Topological Sort</span>
+                                <span class="topic-pct">88%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="topic-bar-item">
+                            <div class="topic-info">
+                                <span>🪟 Two Pointers &amp; Sliding Window</span>
+                                <span class="topic-pct">92%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="topic-bar-item">
+                            <div class="topic-info">
+                                <span>🥞 Stacks, Queues &amp; Heaps</span>
+                                <span class="topic-pct">90%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 90%;"></div></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- LIVE STATS CARDS WITH GRACEFUL FALLBACK -->
@@ -1366,6 +1498,60 @@
         </section>
 
     </main>
+
+    <!-- ================= 1. INTERACTIVE COMMAND PALETTE MODAL (Ctrl+K) ================= -->
+    <div id="cmdKModal" class="cmdk-backdrop" role="dialog" aria-modal="true" aria-label="Command Palette">
+        <div class="cmdk-dialog">
+            <div class="cmdk-search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="cmdKInput" placeholder="Type a command or search projects... (e.g. 'ai', 'resume', 'skills', 'dsa')" autocomplete="off" spellcheck="false">
+                <kbd class="cmdk-esc-key">ESC</kbd>
+            </div>
+            <div class="cmdk-list" id="cmdKList" role="listbox">
+                <!-- Dynamically populated via JS -->
+            </div>
+            <div class="cmdk-footer">
+                <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+                <span><kbd>↵</kbd> to select</span>
+                <span><kbd>ESC</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 2. INTERACTIVE DEVELOPER TERMINAL DRAWER ================= -->
+    <div id="terminalModal" class="terminal-backdrop" role="dialog" aria-modal="true" aria-label="Interactive Developer Terminal">
+        <div class="terminal-window">
+            <div class="terminal-bar">
+                <div class="terminal-dots">
+                    <span class="dot dot-close" id="termCloseBtn" title="Close Terminal"></span>
+                    <span class="dot dot-min"></span>
+                    <span class="dot dot-max"></span>
+                </div>
+                <div class="terminal-title">vivek@jnu-scs:~ (zsh) — Interactive CLI</div>
+                <div class="terminal-hint">Type 'help' or 'exit'</div>
+            </div>
+            <div class="terminal-body" id="termBody">
+                <div class="term-line term-welcome">
+                    🚀 <strong style="color: var(--accent1);">Vivek Shukla's Developer CLI v2.6</strong> [MCA @ JNU Delhi]<br>
+                    Type <span class="term-hl">'help'</span> to see all available commands, or try <span class="term-hl">'skills'</span>, <span class="term-hl">'projects'</span>, <span class="term-hl">'dsa'</span>, <span class="term-hl">'hire'</span>, <span class="term-hl">'contact'</span>.
+                </div>
+            </div>
+            <form id="termForm" class="term-input-row">
+                <span class="term-prompt">vivek@portfolio:~$</span>
+                <input type="text" id="termInput" autocomplete="off" spellcheck="false" autofocus>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= 3. PROJECT ARCHITECTURE DEEP DIVE GLASS MODAL ================= -->
+    <div id="projectDetailModal" class="detail-backdrop" role="dialog" aria-modal="true" aria-label="Project Architecture Deep Dive">
+        <div class="detail-dialog">
+            <button type="button" class="detail-close-btn" id="detailCloseBtn" aria-label="Close modal">✕</button>
+            <div class="detail-content" id="detailContent">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
 
     <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
