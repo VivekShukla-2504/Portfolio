@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function downloadResume() {
         playClickSound();
         const link = document.createElement("a");
-        link.href = "resume.pdf";
+        link.href = "FAANG_SDE.pdf";
         link.download = "Vivek_Shukla_Resume.pdf";
         link.click();
         showToast("📄 Downloading Vivek Shukla's Resume...");
