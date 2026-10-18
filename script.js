@@ -319,8 +319,7 @@ document.querySelectorAll(".project-card").forEach(card => {
 
     card.addEventListener("mouseleave", () => {
 
-        card.style.transform =
-            "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+        card.style.transform = "";
 
     });
 
