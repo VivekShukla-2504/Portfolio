@@ -654,6 +654,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "tool-email", title: "Copy Email: vivek25tech@gmail.com", group: "Interactive Tools", icon: "📋", badge: "Clipboard", action: () => copyEmail() },
         { id: "tool-phone", title: "Copy Phone: +91 8840243403", group: "Interactive Tools", icon: "📞", badge: "Clipboard", action: () => copyPhone() },
 
+        // Dynamic Cosmos Atmospheres
+        { id: "atmo-universe", title: "Atmosphere: Research Universe (arXiv Galaxy & Knowledge Graph)", group: "Cosmos Atmospheres", icon: "🌌", badge: "Cosmos", action: () => { if (window.setAtmosphere) window.setAtmosphere("universe", true); } },
+        { id: "atmo-neural", title: "Atmosphere: Neural AI Agent (LangGraph Synapses & Firing Pulses)", group: "Cosmos Atmospheres", icon: "🤖", badge: "Cosmos", action: () => { if (window.setAtmosphere) window.setAtmosphere("neural", true); } },
+        { id: "atmo-quant", title: "Atmosphere: Quant Flow (Actuarial Probability Waves)", group: "Cosmos Atmospheres", icon: "📈", badge: "Cosmos", action: () => { if (window.setAtmosphere) window.setAtmosphere("quant", true); } },
+        { id: "atmo-cyber", title: "Atmosphere: Cyber Matrix (FAANG Systems & Data Streams)", group: "Cosmos Atmospheres", icon: "⚡", badge: "Cosmos", action: () => { if (window.setAtmosphere) window.setAtmosphere("cyber", true); } },
+
         // Architecture Deep Dives
         { id: "arch-ai-support", title: "Architecture: AI Customer Support Agent (LangGraph)", group: "Architecture Deep Dives", icon: "🛡️", badge: "Deep Dive", action: () => openArchitectureModal("ai-support") },
         { id: "arch-insurance", title: "Architecture: Insurance Risk & Actuarial Platform", group: "Architecture Deep Dives", icon: "📈", badge: "Deep Dive", action: () => openArchitectureModal("insurance") },
@@ -1009,11 +1015,35 @@ document.addEventListener("DOMContentLoaded", () => {
                     applyTheme("dark", true);
                     localStorage.setItem("portfolio-theme", "dark");
                     appendTerminalOutput("Switched theme to Dark mode.");
+                } else if (["universe", "neural", "quant", "cyber"].includes(arg)) {
+                    if (window.setAtmosphere) window.setAtmosphere(arg, true);
+                    appendTerminalOutput(`🌌 Switched Cosmos Atmosphere to: <strong style="color: var(--accent1);">${arg.toUpperCase()}</strong>`);
                 } else {
                     toggleTheme();
                     appendTerminalOutput("Toggled display theme.");
                 }
                 break;
+
+            case "atmosphere":
+            case "cosmos": {
+                const atmoMode = (arg || "").toLowerCase();
+                if (["universe", "neural", "quant", "cyber"].includes(atmoMode)) {
+                    if (window.setAtmosphere) window.setAtmosphere(atmoMode, true);
+                    appendTerminalOutput(`🌌 Cosmos atmosphere switched to: <strong style="color: var(--accent1);">${atmoMode.toUpperCase()}</strong>`);
+                } else {
+                    appendTerminalOutput(`
+<div style="font-family: var(--font-mono); font-size: 13px; line-height: 1.6;">
+  🌌 <strong style="color: var(--accent1);">Cosmos Atmosphere Engine:</strong><br>
+  Usage: <span class="term-hl">atmosphere &lt;mode&gt;</span><br>
+  • <span class="term-hl">atmosphere universe</span> : Research Universe &amp; arXiv Citation Galaxy<br>
+  • <span class="term-hl">atmosphere neural</span>   : Autonomous AI Agent &amp; LangGraph Synapses<br>
+  • <span class="term-hl">atmosphere quant</span>    : Quant Flow &amp; Actuarial Probability Waves<br>
+  • <span class="term-hl">atmosphere cyber</span>    : FAANG Systems &amp; Distributed Matrix Mesh
+</div>
+                    `);
+                }
+                break;
+            }
 
             case "sound":
                 if (arg === "on") {
@@ -1169,13 +1199,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // 8. DYNAMIC TYPING ANIMATION
     // =========================================================================
     const roles = [
-        "Full-Stack Software Engineer",
-        "Autonomous AI Agent Builder (LangGraph)",
-        "FastAPI & React 19 Architect",
-        "Java DSA Specialist (400+ Solved)",
-        "FinTech & Actuarial Platform Engineer",
-        "Web3 & Smart Contract Developer",
-        "MCA Scholar @ JNU New Delhi"
+        "Full-Stack Software Engineer (FAANG SDE)",
+        "AI & Machine Learning Engineer (LangGraph)",
+        "Data & Quantitative Risk Analyst (Python / SQL)",
+        "Business Development & Client Counseling (BDC)",
+        "Java DSA Specialist (400+ Problems Solved)",
+        "MCA Scholar @ Jawaharlal Nehru University"
     ];
 
     let roleIndex = 0;
@@ -1209,6 +1238,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     typeEffect();
+
+    // Rotating 4 Target Roles in Hero Availability Status Pill
+    const availableRoles = [
+        "Available for: SDE & Full-Stack Roles",
+        "Available for: AI & Machine Learning Roles",
+        "Available for: Data & Quantitative Analyst Roles",
+        "Available for: Business Development & Counseling"
+    ];
+    let availableRoleIndex = 0;
+    const statusPillText = document.getElementById("statusPillText");
+    if (statusPillText) {
+        setInterval(() => {
+            statusPillText.classList.add("fade-out");
+            setTimeout(() => {
+                availableRoleIndex = (availableRoleIndex + 1) % availableRoles.length;
+                statusPillText.textContent = availableRoles[availableRoleIndex];
+                statusPillText.classList.remove("fade-out");
+            }, 350);
+        }, 3200);
+    }
 
 
     // =========================================================================
@@ -1533,6 +1582,527 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
+    // =========================================================================
+    // 20. FAANG DYNAMIC COSMOS & ATMOSPHERE ENGINE (CANVAS + HUD)
+    // =========================================================================
+    const universeCanvas = document.getElementById("universeCanvas");
+    const hudToggleBtn = document.getElementById("hudToggleBtn");
+    const hudPopover = document.getElementById("hudPopover");
+    const hudIcon = document.getElementById("hudIcon");
+    const hudCurrentLabel = document.getElementById("hudCurrentLabel");
+    const hudModeItems = document.querySelectorAll(".hud-mode-item");
+    const hudAtmosphereBadge = document.getElementById("hudAtmosphereBadge");
+
+    if (universeCanvas && universeCanvas.getContext) {
+        const ctx = universeCanvas.getContext("2d");
+        let width = 0;
+        let height = 0;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        let currentMode = "universe";
+        let targetMode = "universe";
+        let modeBlend = 1.0;
+        let autoAdaptEnabled = true;
+
+        const ATMOSPHERE_CONFIG = {
+            universe: {
+                label: "Research Universe",
+                icon: "🌌",
+                glow1: "rgba(0, 212, 255, 0.45)",
+                glow2: "rgba(139, 92, 246, 0.40)",
+                glow3: "rgba(0, 212, 255, 0.25)"
+            },
+            neural: {
+                label: "Neural AI Agent",
+                icon: "🤖",
+                glow1: "rgba(139, 92, 246, 0.50)",
+                glow2: "rgba(217, 70, 239, 0.45)",
+                glow3: "rgba(0, 212, 255, 0.30)"
+            },
+            quant: {
+                label: "Quant Flow",
+                icon: "📈",
+                glow1: "rgba(16, 185, 129, 0.48)",
+                glow2: "rgba(6, 182, 212, 0.42)",
+                glow3: "rgba(52, 211, 153, 0.28)"
+            },
+            cyber: {
+                label: "Cyber Matrix",
+                icon: "⚡",
+                glow1: "rgba(0, 212, 255, 0.50)",
+                glow2: "rgba(59, 130, 246, 0.45)",
+                glow3: "rgba(16, 185, 129, 0.30)"
+            }
+        };
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            universeCanvas.width = width * dpr;
+            universeCanvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+        }
+        resizeCanvas();
+
+        let resizeTimer = null;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(resizeCanvas, 150);
+        });
+
+        // Mouse Tracker
+        const mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, active: false };
+        window.addEventListener("mousemove", (e) => {
+            mouse.targetX = e.clientX;
+            mouse.targetY = e.clientY;
+            mouse.active = true;
+        });
+        window.addEventListener("mouseleave", () => {
+            mouse.active = false;
+            mouse.targetX = -1000;
+            mouse.targetY = -1000;
+        });
+
+        // 1. Universe Nodes (arXiv galaxy)
+        const UNIVERSE_COUNT = 75;
+        const universeNodes = [];
+        for (let i = 0; i < UNIVERSE_COUNT; i++) {
+            universeNodes.push({
+                x: Math.random() * (width || 1200),
+                y: Math.random() * (height || 800),
+                vx: (Math.random() - 0.5) * 0.45,
+                vy: (Math.random() - 0.5) * 0.45,
+                radius: Math.random() < 0.2 ? Math.random() * 2.8 + 2.2 : Math.random() * 1.6 + 0.8,
+                isHub: Math.random() < 0.15,
+                pulse: Math.random() * Math.PI * 2,
+                color: Math.random() < 0.6 ? "#00d4ff" : (Math.random() < 0.5 ? "#a855f7" : "#38bdf8")
+            });
+        }
+
+        // 2. Neural Nodes & Synapses (LangGraph agents)
+        const NEURAL_COUNT = 45;
+        const neuralNodes = [];
+        for (let i = 0; i < NEURAL_COUNT; i++) {
+            neuralNodes.push({
+                x: Math.random() * (width || 1200),
+                y: Math.random() * (height || 800),
+                vx: (Math.random() - 0.5) * 0.55,
+                vy: (Math.random() - 0.5) * 0.55,
+                radius: Math.random() * 2.5 + 1.5,
+                layer: Math.floor(Math.random() * 4),
+                connectedTo: []
+            });
+        }
+        for (let i = 0; i < neuralNodes.length; i++) {
+            for (let j = i + 1; j < neuralNodes.length; j++) {
+                if (Math.random() < 0.18) {
+                    neuralNodes[i].connectedTo.push(j);
+                }
+            }
+        }
+        const synapticPulses = [];
+
+        // 3. Cyber Stream Particles
+        const CYBER_COUNT = 55;
+        const cyberParticles = [];
+        const glyphs = ["0", "1", "<>", "{}", "λ", "ai", "42", "fx"];
+        for (let i = 0; i < CYBER_COUNT; i++) {
+            cyberParticles.push({
+                x: Math.random() * (width || 1200),
+                y: Math.random() * (height || 800),
+                speedY: Math.random() * 1.8 + 0.8,
+                length: Math.random() * 35 + 15,
+                char: glyphs[Math.floor(Math.random() * glyphs.length)],
+                alpha: Math.random() * 0.6 + 0.2
+            });
+        }
+
+        let wavePhase = 0;
+
+        // Render Atmosphere 1: Research Universe
+        function renderUniverse(alpha) {
+            if (alpha <= 0.01) return;
+            ctx.save();
+            ctx.globalAlpha = alpha;
+
+            for (let i = 0; i < universeNodes.length; i++) {
+                const a = universeNodes[i];
+                for (let j = i + 1; j < universeNodes.length; j++) {
+                    const b = universeNodes[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const maxDist = a.isHub || b.isHub ? 140 : 95;
+
+                    if (dist < maxDist) {
+                        const linkAlpha = (1 - dist / maxDist) * (a.isHub || b.isHub ? 0.35 : 0.18);
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.strokeStyle = `rgba(0, 212, 255, ${linkAlpha})`;
+                        ctx.lineWidth = a.isHub && b.isHub ? 1.2 : 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            for (let i = 0; i < universeNodes.length; i++) {
+                const node = universeNodes[i];
+                node.pulse += 0.03;
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > width) node.vx *= -1;
+                if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                if (mouse.active) {
+                    const mdx = mouse.x - node.x;
+                    const mdy = mouse.y - node.y;
+                    const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                    if (mdist < 140) {
+                        node.x += (mdx / mdist) * 0.65;
+                        node.y += (mdy / mdist) * 0.65;
+                    }
+                }
+
+                ctx.beginPath();
+                const currentRadius = node.radius + Math.sin(node.pulse) * 0.5;
+                ctx.arc(node.x, node.y, Math.max(0.5, currentRadius), 0, Math.PI * 2);
+                ctx.fillStyle = node.color;
+                ctx.shadowColor = node.color;
+                ctx.shadowBlur = node.isHub ? 16 : 8;
+                ctx.fill();
+
+                if (node.isHub) {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, currentRadius * 2.8, 0, Math.PI * 2);
+                    ctx.strokeStyle = "rgba(0, 212, 255, 0.18)";
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+            ctx.restore();
+        }
+
+        // Render Atmosphere 2: Neural AI Synapses
+        function renderNeural(alpha) {
+            if (alpha <= 0.01) return;
+            ctx.save();
+            ctx.globalAlpha = alpha;
+
+            if (Math.random() < 0.12 && synapticPulses.length < 18) {
+                const fromIdx = Math.floor(Math.random() * neuralNodes.length);
+                const fromNode = neuralNodes[fromIdx];
+                if (fromNode.connectedTo.length > 0) {
+                    const toIdx = fromNode.connectedTo[Math.floor(Math.random() * fromNode.connectedTo.length)];
+                    synapticPulses.push({
+                        from: fromNode,
+                        to: neuralNodes[toIdx],
+                        progress: 0,
+                        speed: Math.random() * 0.035 + 0.025,
+                        color: Math.random() < 0.5 ? "#c084fc" : "#00d4ff"
+                    });
+                }
+            }
+
+            for (let i = 0; i < neuralNodes.length; i++) {
+                const a = neuralNodes[i];
+                a.x += a.vx;
+                a.y += a.vy;
+                if (a.x < 0 || a.x > width) a.vx *= -1;
+                if (a.y < 0 || a.y > height) a.vy *= -1;
+
+                for (let k = 0; k < a.connectedTo.length; k++) {
+                    const b = neuralNodes[a.connectedTo[k]];
+                    if (!b) continue;
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 180) {
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.strokeStyle = "rgba(139, 92, 246, 0.22)";
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+
+                ctx.beginPath();
+                ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "#c084fc";
+                ctx.shadowColor = "#8b5cf6";
+                ctx.shadowBlur = 12;
+                ctx.fill();
+            }
+
+            for (let i = synapticPulses.length - 1; i >= 0; i--) {
+                const pulse = synapticPulses[i];
+                pulse.progress += pulse.speed;
+                if (pulse.progress >= 1) {
+                    synapticPulses.splice(i, 1);
+                    continue;
+                }
+                const px = pulse.from.x + (pulse.to.x - pulse.from.x) * pulse.progress;
+                const py = pulse.from.y + (pulse.to.y - pulse.from.y) * pulse.progress;
+                ctx.beginPath();
+                ctx.arc(px, py, 2.8, 0, Math.PI * 2);
+                ctx.fillStyle = pulse.color;
+                ctx.shadowColor = pulse.color;
+                ctx.shadowBlur = 14;
+                ctx.fill();
+            }
+
+            ctx.restore();
+        }
+
+        // Render Atmosphere 3: Quant Flow & Actuarial Waves
+        function renderQuant(alpha) {
+            if (alpha <= 0.01) return;
+            ctx.save();
+            ctx.globalAlpha = alpha;
+
+            wavePhase += 0.018;
+            const baseY = height * 0.65;
+            const waveCount = 3;
+
+            for (let w = 0; w < waveCount; w++) {
+                ctx.beginPath();
+                const freq = 0.0022 * (w + 1);
+                const amp = 45 + w * 25;
+                const offset = w * 1.5;
+
+                ctx.moveTo(0, baseY);
+                for (let x = 0; x <= width; x += 18) {
+                    let mouseDistortion = 0;
+                    if (mouse.active) {
+                        const mdx = x - mouse.x;
+                        if (Math.abs(mdx) < 200) {
+                            mouseDistortion = Math.sin((mdx / 200) * Math.PI) * 35;
+                        }
+                    }
+                    const y = baseY + Math.sin(x * freq + wavePhase + offset) * amp + Math.cos(x * 0.001 + wavePhase) * 15 + mouseDistortion;
+                    ctx.lineTo(x, y);
+                }
+
+                ctx.strokeStyle = w === 0 ? "rgba(16, 185, 129, 0.45)" : (w === 1 ? "rgba(6, 182, 212, 0.35)" : "rgba(52, 211, 153, 0.22)");
+                ctx.lineWidth = w === 0 ? 2 : 1.2;
+                ctx.stroke();
+            }
+
+            const step = Math.max(90, width / 12);
+            for (let x = step; x < width; x += step) {
+                const y = baseY + Math.sin(x * 0.0022 + wavePhase) * 45;
+                ctx.beginPath();
+                ctx.moveTo(x, baseY + 60);
+                ctx.lineTo(x, y);
+                ctx.strokeStyle = "rgba(16, 185, 129, 0.15)";
+                ctx.setLineDash([3, 4]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = "#10b981";
+                ctx.shadowColor = "#10b981";
+                ctx.shadowBlur = 8;
+                ctx.fill();
+            }
+
+            ctx.restore();
+        }
+
+        // Render Atmosphere 4: Cyber Matrix
+        function renderCyber(alpha) {
+            if (alpha <= 0.01) return;
+            ctx.save();
+            ctx.globalAlpha = alpha;
+
+            ctx.font = "12px var(--font-mono)";
+            for (let i = 0; i < cyberParticles.length; i++) {
+                const p = cyberParticles[i];
+                p.y -= p.speedY;
+                if (p.y < -20) {
+                    p.y = height + 20;
+                    p.x = Math.random() * width;
+                }
+
+                ctx.fillStyle = `rgba(0, 212, 255, ${p.alpha * 0.7})`;
+                ctx.fillText(p.char, p.x, p.y);
+
+                ctx.beginPath();
+                ctx.moveTo(p.x + 4, p.y + 4);
+                ctx.lineTo(p.x + 4, p.y + p.length);
+                ctx.strokeStyle = `rgba(0, 212, 255, ${p.alpha * 0.25})`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            }
+
+            ctx.restore();
+        }
+
+        let animFrameId = null;
+
+        function animate() {
+            if (mouse.active) {
+                mouse.x += (mouse.targetX - mouse.x) * 0.15;
+                mouse.y += (mouse.targetY - mouse.y) * 0.15;
+            }
+
+            ctx.clearRect(0, 0, width, height);
+
+            if (currentMode !== targetMode) {
+                modeBlend -= 0.04;
+                if (modeBlend <= 0) {
+                    currentMode = targetMode;
+                    modeBlend = 1.0;
+                }
+            } else if (modeBlend < 1.0) {
+                modeBlend += 0.04;
+                if (modeBlend > 1.0) modeBlend = 1.0;
+            }
+
+            renderAtmosphere(currentMode, modeBlend);
+
+            if (currentMode !== targetMode) {
+                renderAtmosphere(targetMode, 1.0 - modeBlend);
+            }
+
+            animFrameId = requestAnimationFrame(animate);
+        }
+
+        function renderAtmosphere(mode, alpha) {
+            if (mode === "universe") renderUniverse(alpha);
+            else if (mode === "neural") renderNeural(alpha);
+            else if (mode === "quant") renderQuant(alpha);
+            else if (mode === "cyber") renderCyber(alpha);
+        }
+
+        animate();
+
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                cancelAnimationFrame(animFrameId);
+            } else {
+                animate();
+            }
+        });
+
+        function setAtmosphere(mode, isManual = false) {
+            if (!ATMOSPHERE_CONFIG[mode]) return;
+            if (targetMode === mode) return;
+
+            targetMode = mode;
+            if (isManual) {
+                autoAdaptEnabled = false;
+                if (hudAtmosphereBadge) {
+                    hudAtmosphereBadge.textContent = "Locked";
+                    hudAtmosphereBadge.style.background = "rgba(139, 92, 246, 0.2)";
+                }
+            }
+
+            const cfg = ATMOSPHERE_CONFIG[mode];
+            if (hudIcon) hudIcon.textContent = cfg.icon;
+            if (hudCurrentLabel) hudCurrentLabel.textContent = cfg.label;
+
+            hudModeItems.forEach(item => {
+                item.classList.toggle("active", item.getAttribute("data-mode") === mode);
+            });
+
+            const glow1 = document.querySelector(".glow-1");
+            const glow2 = document.querySelector(".glow-2");
+            const glow3 = document.querySelector(".glow-3");
+            if (glow1) glow1.style.background = `radial-gradient(circle, ${cfg.glow1} 0%, transparent 70%)`;
+            if (glow2) glow2.style.background = `radial-gradient(circle, ${cfg.glow2} 0%, transparent 70%)`;
+            if (glow3) glow3.style.background = `radial-gradient(circle, ${cfg.glow3} 0%, transparent 70%)`;
+        }
+
+        if (hudToggleBtn && hudPopover) {
+            hudToggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                playClickSound();
+                hudPopover.classList.toggle("show");
+                hudToggleBtn.setAttribute("aria-expanded", hudPopover.classList.contains("show"));
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!hudPopover.contains(e.target) && !hudToggleBtn.contains(e.target)) {
+                    hudPopover.classList.remove("show");
+                    hudToggleBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            hudModeItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    const mode = item.getAttribute("data-mode");
+                    playChimeSound();
+                    setAtmosphere(mode, true);
+                    showToast(`Cosmos switched to ${ATMOSPHERE_CONFIG[mode].label}`);
+                    hudPopover.classList.remove("show");
+                    hudToggleBtn.setAttribute("aria-expanded", "false");
+                });
+            });
+        }
+
+        const projectHoverMap = {
+            "card-research-ai": "universe",
+            "card-ai-support": "neural",
+            "card-gen-ai": "neural",
+            "card-insurance": "quant",
+            "card-transitops": "cyber",
+            "card-certchain": "cyber"
+        };
+
+        Object.keys(projectHoverMap).forEach(cardId => {
+            const cardEl = document.getElementById(cardId);
+            if (cardEl) {
+                cardEl.addEventListener("mouseenter", () => {
+                    if (autoAdaptEnabled) {
+                        setAtmosphere(projectHoverMap[cardId]);
+                    }
+                });
+            }
+        });
+
+        const filterAtmosphereMap = {
+            "all": "universe",
+            "ai": "neural",
+            "fullstack": "cyber",
+            "data": "quant",
+            "web3": "cyber",
+            "ml-automation": "universe",
+            "web-tools": "cyber"
+        };
+
+        document.querySelectorAll(".filter-btn").forEach(fBtn => {
+            fBtn.addEventListener("click", () => {
+                const category = fBtn.getAttribute("data-filter");
+                if (autoAdaptEnabled && filterAtmosphereMap[category]) {
+                    setAtmosphere(filterAtmosphereMap[category]);
+                }
+            });
+        });
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            if (!autoAdaptEnabled) return;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    if (id === "home") setAtmosphere("universe");
+                    else if (id === "skills" || id === "coding") setAtmosphere("cyber");
+                    else if (id === "experience") setAtmosphere("quant");
+                    else if (id === "about" || id === "contact") setAtmosphere("neural");
+                }
+            });
+        }, { threshold: 0.35 });
+
+        document.querySelectorAll("section[id]").forEach(sec => {
+            sectionObserver.observe(sec);
+        });
+
+        window.setAtmosphere = setAtmosphere;
+    }
 
     // =========================================================================
     // 19. UTILITY HELPERS
