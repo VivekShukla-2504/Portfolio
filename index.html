@@ -5,1192 +5,1384 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#050816">
+    <meta name="theme-color" content="#07090e">
 
-    <title>Vivek Shukla | MERN Stack Developer & AI Enthusiast</title>
+    <title>Vivek Shukla | Software Development Engineer &amp; AI Systems</title>
 
     <!-- ================= SEO META TAGS ================= -->
-    <meta name="description" content="Vivek Shukla | MERN Stack Developer | AI Enthusiast | Software Engineer. MCA @ JNU. 400+ DSA problems solved, 15+ projects built.">
-    <meta name="keywords" content="Vivek Shukla, MERN Developer, Portfolio, React, Node, Java, DSA, Software Engineer, JNU">
+    <meta name="description" content="Vivek Shukla | Software Engineer, MERN Stack Developer &amp; AI Specialist. MCA @ JNU Delhi. 400+ DSA problems solved in Java, 15+ production-grade &amp; AI projects built.">
+    <meta name="keywords" content="Vivek Shukla, Software Engineer, SDE, MERN Stack, Full Stack Developer, FastAPI, LangGraph, AI Engineer, Java DSA, JNU, React, Node.js">
     <meta name="author" content="Vivek Shukla">
     <link rel="canonical" href="https://vivekshukla.dev/">
 
     <!-- ================= OPEN GRAPH TAGS ================= -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Vivek Shukla | Portfolio">
-    <meta property="og:description" content="MERN Stack Developer | AI Enthusiast | 400+ DSA Problems Solved">
-    <meta property="og:image" content="profile.png">
+    <meta property="og:title" content="Vivek Shukla | Software Development Engineer &amp; AI Systems">
+    <meta property="og:description" content="MCA @ JNU Delhi. Full-Stack Developer &amp; AI Specialist. 400+ DSA Problems Solved in Java, 15+ Full-Stack &amp; AI Projects.">
+    <meta property="og:image" content="https://vivekshukla.dev/profile.png">
     <meta property="og:url" content="https://vivekshukla.dev/">
 
     <!-- ================= TWITTER CARD ================= -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vivek Shukla | Portfolio">
-    <meta name="twitter:description" content="MERN Stack Developer | AI Enthusiast | 400+ DSA Problems Solved">
-    <meta name="twitter:image" content="profile.png">
+    <meta name="twitter:title" content="Vivek Shukla | SDE &amp; AI Systems">
+    <meta name="twitter:description" content="MCA @ JNU Delhi. Full-Stack Developer &amp; AI Specialist. 400+ DSA Problems Solved in Java.">
+    <meta name="twitter:image" content="https://vivekshukla.dev/profile.png">
 
-    <!-- ================= FAVICON ================= -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- ================= HIGH-RES SVG DATA FAVICON ================= -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2307090e'/><path d='M26 36 L44 50 L26 64' stroke='%2300d4ff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/><path d='M50 64 L74 64' stroke='%238b5cf6' stroke-width='8' stroke-linecap='round'/></svg>">
 
+    <!-- ================= STYLESHEET ================= -->
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- ================= GOOGLE FONTS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
-
 
 <body>
 
     <!-- ================= SKIP LINK (Accessibility) ================= -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="bg-blobs"></div>
+    <!-- ================= AMBIENT CANVAS BACKGROUND ================= -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+    <div class="ambient-glow glow-3" aria-hidden="true"></div>
 
-    <!-- ================= THEME TOGGLE ================= -->
-    <button id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme">🌙</button>
+    <!-- ================= NAVIGATION HEADER ================= -->
+    <header id="siteHeader">
 
+        <nav class="nav-container">
 
-    <header>
+            <a href="#home" class="logo" aria-label="Vivek Shukla Home">
+                <span class="logo-code">&lt;</span>Vivek<span class="logo-accent">Shukla</span><span class="logo-code">/&gt;</span>
+                <span class="logo-dot"></span>
+            </a>
 
-        <nav>
-
-            <h2 class="logo">
-                Vivek<span>Shukla</span>
-            </h2>
-
-
-            <ul id="navLinks">
-
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#coding">Coding</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-
+            <ul id="navLinks" class="nav-menu">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#education" class="nav-item">Education</a></li>
+                <li><a href="#coding" class="nav-item">Coding</a></li>
+                <li><a href="#certificates" class="nav-item">Certificates</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
 
-            <button id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
 
+                <a href="resume.pdf" download class="nav-cta-btn" id="navResumeBtn">
+                    <span>Resume</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+
+                <button id="navToggle" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+            </div>
 
         </nav>
 
     </header>
 
-    <div id="navOverlay"></div>
+    <div id="navOverlay" class="nav-overlay"></div>
 
-
+    <!-- ================= MAIN CONTENT ================= -->
     <main id="main-content">
 
-    <!-- ================= HERO ================= -->
+        <!-- ================= HERO SECTION ================= -->
+        <section id="home" class="hero">
 
-    <section id="home" class="hero">
+            <div class="hero-layout">
 
-
-        <div class="hero-image">
-
-            <img src="profile.png" alt="Vivek Shukla, MERN Stack Developer and AI enthusiast, headshot photo" width="280" height="280">
-
-        </div>
-
-
-
-        <div class="hero-content">
-
-            <div class="eyebrow">🟢 Available for Internships & Full-Time Roles</div>
-
-            <h1>
-                Hi, I'm <span>Vivek Shukla</span>
-            </h1>
-
-
-            <h3 class="typing"></h3>
-
-
-            <p>
-                MERN Developer | AI Enthusiast | Problem Solver
-            </p>
-
-
-
-            <div class="hero-buttons">
-
-
-                <a href="#projects" class="btn">
-                    🚀 Explore Work
-                </a>
-
-
-                <a href="resume.pdf" download class="btn resume" id="resumeBtn">
-                    📄 Resume
-                </a>
-
-
-                <a href="#contact" class="btn hire">
-                    🤝 Hire Me
-                </a>
-
-
-            </div>
-
-            <!-- ================= HERO STATS ================= -->
-
-            <div class="stats">
-
-                <div class="stat">
-                    <h2><span class="counter" data-target="400">0</span>+</h2>
-                    <p>DSA Problems</p>
+                <div class="hero-image-col">
+                    <div class="avatar-card">
+                        <div class="avatar-orbit"></div>
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-wrapper">
+                            <img src="profile.png" alt="Vivek Shukla, Software Development Engineer and AI Enthusiast portrait" width="320" height="320" fetchpriority="high">
+                        </div>
+                        <div class="avatar-badge">
+                            <span class="badge-icon">🎓</span>
+                            <span class="badge-text">MCA @ JNU Delhi</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="stat">
-                    <h2><span class="counter" data-target="15">0</span>+</h2>
-                    <p>Projects</p>
-                </div>
+                <div class="hero-content-col">
 
-                <div class="stat">
-                    <h2><span class="counter" data-target="10">0</span>+</h2>
-                    <p>Technologies</p>
-                </div>
+                    <div class="status-pill">
+                        <span class="status-ping"></span>
+                        <span class="status-dot"></span>
+                        <span class="status-text">Available for SDE &amp; AI Engineering Roles</span>
+                    </div>
 
-                <div class="stat">
-                    <h2><span class="counter" data-target="4">0</span></h2>
-                    <p>Certifications</p>
-                </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Vivek Shukla</span>
+                    </h1>
 
-            </div>
+                    <div class="typing-container" aria-label="Specialization">
+                        <span class="terminal-prefix">&gt;</span>
+                        <span class="typing"></span>
+                        <span class="typed-cursor">_</span>
+                    </div>
 
-
-
-            <div class="social">
-
-
-                <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener">
-                    GitHub
-                </a>
-
-
-                <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank" rel="noopener">
-                    LinkedIn
-                </a>
-
-
-                <a href="#coding">
-                    💻 Coding Profiles
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="reveal">
-
-        <h2>👨‍💻 About Me</h2>
-
-        <div class="about-grid">
-
-            <div class="about-card">
-                <div class="about-card-icon">🎓</div>
-                <h4>Who I Am</h4>
-                <p>
-                    I am an <strong>MCA student at Jawaharlal Nehru University (JNU)</strong>
-                    with a strong passion for <strong>Full-Stack Web Development</strong>,
-                    <strong>Artificial Intelligence</strong>, and building scalable software
-                    solutions that solve real-world problems.
-                </p>
-            </div>
-
-            <div class="about-card">
-                <div class="about-card-icon">💻</div>
-                <h4>What I Build With</h4>
-                <p>
-                    My primary expertise lies in the
-                    <strong>MERN Stack (MongoDB, Express.js, React, Node.js)</strong>.
-                    I enjoy developing secure, responsive, and user-friendly applications,
-                    integrating REST APIs, authentication systems, and AI-powered features.
-                </p>
-            </div>
-
-            <div class="about-card">
-                <div class="about-card-icon">🎯</div>
-                <h4>Where I'm Headed</h4>
-                <p>
-                    I actively strengthen my
-                    <strong>Data Structures & Algorithms</strong> skills using Java and
-                    continuously explore modern technologies, cloud tools, and software
-                    engineering best practices. I aspire to contribute as a
-                    <strong>Software Development Engineer (SDE)</strong> by building
-                    impactful products with clean, efficient, and maintainable code.
-                </p>
-            </div>
-
-        </div>
-        <div class="about-highlights">
-
-            <div class="highlight">💻 MERN Stack Developer</div>
-
-            <div class="highlight">🤖 AI Enthusiast</div>
-
-            <div class="highlight">🧩 DSA in Java</div>
-
-            <div class="highlight">🎓 MCA @ JNU</div>
-
-        </div>
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section id="education" class="reveal">
-
-        <h2>🎓 Education</h2>
-
-        <div class="timeline">
-
-            <!-- MCA -->
-
-            <div class="timeline-item">
-
-                <div class="timeline-content">
-
-                    <span class="year">2025 – 2027</span>
-
-                    <h3>Master of Computer Applications (MCA)</h3>
-
-                    <h4>Jawaharlal Nehru University (JNU), New Delhi</h4>
-
-                    <p>
-                        CGPA: <strong>7.54 / 9</strong>
+                    <p class="hero-bio">
+                        Master of Computer Applications graduate student at <strong>Jawaharlal Nehru University (JNU)</strong>.
+                        Building scalable <strong>Full-Stack Architectures (MERN &amp; FastAPI)</strong>, deterministic
+                        <strong>Autonomous AI Agents (LangGraph)</strong>, and robust systems powered by
+                        <strong>400+ solved DSA problems</strong> in Java.
                     </p>
 
-                </div>
-
-            </div>
-
-            <!-- BCA -->
-
-            <div class="timeline-item">
-
-                <div class="timeline-content">
-
-                    <span class="year">2021 – 2024</span>
-
-                    <h3>Bachelor of Computer Applications (BCA)</h3>
-
-                    <h4>M.L.K.P.G. College, Balrampur</h4>
-
-                    <p> Affiliated to Siddharth University •
-                        CGPA: <strong>8.128 / 10</strong>
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- Intermediate -->
-
-            <div class="timeline-item">
-
-                <div class="timeline-content">
-
-                    <span class="year">2021</span>
-
-                    <h3>Intermediate (Class XII)</h3>
-
-                    <h4>CMS Inter College, Balrampur</h4>
-
-                    <p>
-                        Uttar Pradesh Board • <strong>83.40%</strong>
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- High School -->
-
-            <div class="timeline-item">
-
-                <div class="timeline-content">
-
-                    <span class="year">2019</span>
-
-                    <h3>High School (Class X)</h3>
-
-                    <h4>CMS Inter College, Balrampur</h4>
-
-                    <p>
-                        Uttar Pradesh Board • <strong>81.33%</strong>
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills" class="reveal">
-
-        <h2>🛠 Tech Arsenal</h2>
-
-        <div class="skills-grid">
-
-            <!-- Languages -->
-            <div class="skill-card">
-                <h4>💻 Languages</h4>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=javascript&theme=dark" alt="JavaScript" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=typescript&theme=dark" alt="TypeScript" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=solidity&theme=dark" alt="Solidity" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=sql&theme=dark" alt="SQL" width="55" height="55" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Frontend -->
-            <div class="skill-card">
-                <h4>⚛ Frontend</h4>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=vite&theme=dark" alt="Vite" width="55" height="55" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Backend -->
-            <div class="skill-card">
-                <h4>🌐 Backend</h4>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=express&theme=dark" alt="Express" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" alt="FastAPI" width="55" height="55" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Databases -->
-            <div class="skill-card">
-                <h4>🗄 Databases</h4>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt="MongoDB" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=redis&theme=dark" alt="Redis" width="55" height="55" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Tools -->
-            <div class="skill-card">
-                <h4>⚙ Tools</h4>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=github&theme=dark" alt="GitHub" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=linux&theme=dark" alt="Linux" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=vscode&theme=dark" alt="VS Code" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=postman&theme=dark" alt="Postman" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS" width="55" height="55" loading="lazy">
-                </div>
-            </div>
-
-            <!-- AI / ML -->
-            <div class="skill-card">
-                <h4>🧠 AI / ML</h4>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" alt="TensorFlow" width="55" height="55" loading="lazy">
-                    <img src="https://skillicons.dev/icons?i=opencv&theme=dark" alt="OpenCV" width="55" height="55" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Other Tools (Data / MIS) -->
-            <div class="skill-card">
-                <h4>📊 Data & Reporting</h4>
-                <div class="chip-icons">
-                    <span class="chip">📗 Excel</span>
-                    <span class="chip">📈 Power BI</span>
-                    <span class="chip">📉 Tableau</span>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects" class="reveal">
-
-
-        <h2>🚀 Projects</h2>
-
-
-
-        <!-- ================= GENERATIVE AI & AGENTS ================= -->
-
-        <h3 class="category-title">
-            🤖 Generative AI & Autonomous Agents
-        </h3>
-
-        <div class="project-grid">
-
-            <!-- AI Customer Support Agent -->
-            <div class="project-card">
-
-                <h3>🛡️ AI Customer Support Agent</h3>
-
-                <p>
-                    End-to-end containerized autonomous AI support agent that manages e-commerce refund
-                    workflows. Verifies customer identity, audits orders against a strict deterministic policy
-                    engine, executes refunds, and streams reasoning logs live via SSE to an admin dashboard.
-                </p>
-
-                <div class="tags">
-                    LangGraph • FastAPI • Python • React • SSE • Docker • SQLite • Anthropic / OpenAI
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/AI-Customer-Support-Agent" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Gen AI -->
-            <div class="project-card">
-
-                <h3>💡 Gen-AI Interview Platform</h3>
-
-                <p>
-                    AI-powered mock interview platform leveraging Google Gemini 2.5 Flash for dynamic
-                    technical question synthesis, real-time response evaluation, and comprehensive
-                    candidate performance report generation with actionable scoring analytics.
-                </p>
-
-                <div class="tags">
-                    React (Vite) • Node.js • Express.js • MongoDB • Gemini 2.5 Flash • Context API • SCSS
-                </div>
-
-                <div class="project-links">
-                    <a href="https://gen-ai-theta-roan.vercel.app/" target="_blank" rel="noopener" class="project-btn demo-btn">
-                        🚀 Live Demo
-                    </a>
-                    <a href="https://github.com/VivekShukla-2504/Gen-AI" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- ResearchPaper AI -->
-            <div class="project-card">
-
-                <h3>📚 ResearchPaper AI – arXiv Recommender</h3>
-
-                <p>
-                    Content-based academic paper recommendation engine indexing 41,000+ arXiv research
-                    publications. Features scikit-learn TF-IDF vectorization with 150k features, real-time
-                    cosine similarity scoring, query parsing, and session activity tracking.
-                </p>
-
-                <div class="tags">
-                    Python • FastAPI • Scikit-learn • TF-IDF • Cosine Similarity • React (Vite) • MongoDB
-                </div>
-
-                <div class="project-links">
-                    <a href="https://research-ai-opal-two.vercel.app/" target="_blank" rel="noopener" class="project-btn demo-btn">
-                        🚀 Live Demo
-                    </a>
-                    <a href="https://github.com/VivekShukla-2504/ResearchAI-" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- AI Job Recommendation System -->
-            <div class="project-card">
-
-                <h3>🎯 AI Job Recommendation System</h3>
-
-                <p>
-                    Intelligent job recommendation system built using Python and Prolog. Analyzes
-                    user skills, experience, and domain interests through rule-based matching to
-                    recommend the most suitable engineering positions.
-                </p>
-
-                <div class="tags">
-                    Python • Prolog • Flask • AI • Rule-Based Expert System
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/AI-project" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= FULL-STACK & MERN ================= -->
-
-        <h3 class="category-title">
-            ⚡ Full-Stack & MERN Engineering
-        </h3>
-
-        <div class="project-grid">
-
-            <!-- TransitOps -->
-            <div class="project-card">
-
-                <h3>🚛 TransitOps – Smart Transport Operations</h3>
-
-                <p>
-                    Full-stack enterprise fleet management platform handling end-to-end trip lifecycles,
-                    vehicle maintenance scheduling, driver license expiration tracking, fuel & expense logs,
-                    and multi-role RBAC access control with interactive Recharts visualizations.
-                </p>
-
-                <div class="tags">
-                    React 19 • Node.js • Express.js • MongoDB • Tailwind CSS • Recharts • JWT • Nodemailer
-                </div>
-
-                <div class="project-links">
-                    <a href="https://transit-deploy-liart.vercel.app/" target="_blank" rel="noopener" class="project-btn demo-btn">
-                        🚀 Live Demo
-                    </a>
-                    <a href="https://github.com/VivekShukla-2504/Transit-Deploy-" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Streamify -->
-            <div class="project-card">
-
-                <h3>💬 Streamify – Real-Time Communication</h3>
-
-                <p>
-                    Real-time messaging platform with instant typing indicators, message reactions,
-                    video calls, screen sharing, and customizable theme settings built with responsive layouts.
-                </p>
-
-                <div class="tags">
-                    React • Node.js • Express • MongoDB • Tailwind CSS • Zustand • TanStack Query • WebRTC
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/Streamify" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- AI Invoice -->
-            <div class="project-card">
-
-                <h3>📊 AI Invoice SaaS Platform</h3>
-
-                <p>
-                    Full-stack SaaS invoice management system featuring secure authentication,
-                    multi-tenant scalable architecture, automated invoice generation, and revenue metrics.
-                </p>
-
-                <div class="tags">
-                    MongoDB • Express • React • Node.js • JWT • REST APIs • SaaS
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/AI-Invoice-SaaS-Platform" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= FINTECH & DATA ANALYTICS ================= -->
-
-        <h3 class="category-title">
-            📊 FinTech & Data Analytics
-        </h3>
-
-        <div class="project-grid">
-
-            <!-- Insurance Risk & Premium Analytics -->
-            <div class="project-card">
-
-                <h3>📈 Insurance Risk & Premium Analytics System</h3>
-
-                <p>
-                    Full-stack actuarial analytics system computing claim frequency, severity, pure premiums,
-                    loss ratios, credibility weighting, and scenario stress testing across risk segments.
-                    Features 8 KPIs, 10 interactive Recharts charts, and automated CSV/JSON reporting.
-                </p>
-
-                <div class="tags">
-                    Python • FastAPI • Pandas • NumPy • React (Vite) • Tailwind CSS • Recharts • MongoDB
-                </div>
-
-                <div class="project-links">
-                    <a href="https://risk-and-premium-analysis.vercel.app/" target="_blank" rel="noopener" class="project-btn demo-btn">
-                        🚀 Live Demo
-                    </a>
-                    <a href="https://github.com/VivekShukla-2504/Risk-and-Premium-Analysis" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= BLOCKCHAIN & WEB3 ================= -->
-
-        <h3 class="category-title">
-            ⛓️ Blockchain & Web3 Technologies
-        </h3>
-
-        <div class="project-grid">
-
-            <!-- CertChain -->
-            <div class="project-card">
-
-                <h3>🔒 CertChain – Blockchain Certificate Verification</h3>
-
-                <p>
-                    Decentralized academic credential issuance and verification platform built on Ethereum smart
-                    contracts. Stores tamper-proof cryptographic hashes on-chain with instant public QR-code
-                    verification and AES-256-GCM encrypted IPFS decentralized storage.
-                </p>
-
-                <div class="tags">
-                    Solidity • Hardhat • Ethers.js • React • Node.js • Express • MongoDB • IPFS • AES-256
-                </div>
-
-                <div class="project-links">
-                    <a href="https://certchain-puce.vercel.app/" target="_blank" rel="noopener" class="project-btn demo-btn">
-                        🚀 Live Demo
-                    </a>
-                    <a href="https://github.com/VivekShukla-2504/CERTCHAIN" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= MACHINE LEARNING & AUTOMATION ================= -->
-
-        <h3 class="category-title">
-            🐍 Machine Learning & Desktop Automation
-        </h3>
-
-        <div class="project-grid">
-
-            <!-- SMS Spam Classifier -->
-            <div class="project-card">
-
-                <h3>📩 SMS Spam Classifier</h3>
-
-                <p>
-                    Machine learning application that classifies SMS messages as spam or
-                    legitimate using Natural Language Processing and the Multinomial Naive
-                    Bayes algorithm.
-                </p>
-
-                <div class="tags">
-                    Python • NLP • Machine Learning • Scikit-learn
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/gui/tree/main/sms%20classifier" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Window Resizer Tool -->
-            <div class="project-card">
-
-                <h3>🪟 Window Resizer Tool</h3>
-
-                <p>
-                    Desktop automation utility developed in Python to resize, organize,
-                    and manage application windows efficiently for improved productivity.
-                </p>
-
-                <div class="tags">
-                    Python • GUI • Automation • PyAutoGUI
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/gui/blob/main/window%20resizer.py" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= HTML CSS JS PROJECTS ================= -->
-
-        <h3 class="category-title">
-            🌐 HTML • CSS • JavaScript Projects
-        </h3>
-
-        <div class="project-grid">
-
-            <!-- BMI -->
-            <div class="project-card">
-
-                <h3>⚖️ BMI Calculator</h3>
-
-                <p>
-                    Interactive web application to calculate Body Mass Index
-                    with responsive user interface.
-                </p>
-
-                <div class="tags">
-                    HTML • CSS • JavaScript
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/MERN/tree/main/BMI_Index" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Guess Number -->
-            <div class="project-card">
-
-                <h3>🎯 Guess Number Game</h3>
-
-                <p>
-                    JavaScript based interactive guessing game with random
-                    number generation and user feedback.
-                </p>
-
-                <div class="tags">
-                    HTML • CSS • JavaScript
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/MERN/tree/main/guess_number" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Color Change -->
-            <div class="project-card">
-
-                <h3>🎨 Web Window Color Change</h3>
-
-                <p>
-                    DOM manipulation project that dynamically changes
-                    webpage background colors.
-                </p>
-
-                <div class="tags">
-                    HTML • CSS • JavaScript • DOM
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/VivekShukla-2504/MERN/tree/main/Webwindow_color_change" target="_blank" rel="noopener" class="project-btn github-btn">
-                        🔗 GitHub
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EXPERIENCE ================= -->
-
-    <section id="experience" class="reveal">
-
-        <h2>💼 Experience</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-content">
-
-                    <span class="year">Jul 2025 – Oct 2025</span>
-
-                    <h3>MIS Assistant <span class="role-tag">Full-Time</span></h3>
-
-                    <h4>People Action for National Integration (PANI)</h4>
-
-                    <p>
-                        Managed large Excel datasets end-to-end — data cleaning, pivot tables,
-                        VLOOKUP-based reporting, and dashboard creation — to support
-                        data-driven decisions across the organization.
-                    </p>
-
-                    <div class="tags">
-                        Excel • Data Cleaning • Dashboard Reporting • Pivot Tables • VLOOKUP
+                    <div class="credential-tags">
+                        <span class="tag-pill">🎓 JNU New Delhi</span>
+                        <span class="tag-pill">⚡ MERN &amp; FastAPI</span>
+                        <span class="tag-pill">🤖 LangGraph &amp; Gemini</span>
+                        <span class="tag-pill">🧩 400+ Java DSA</span>
+                        <span class="tag-pill">🔒 Web3 &amp; Solidity</span>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>🚀 Explore Projects</span>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </a>
+                        <a href="resume.pdf" download class="btn btn-secondary" id="resumeBtn">
+                            <span>📄 View Resume</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>🤝 Let's Connect</span>
+                        </a>
+                    </div>
+
+                    <!-- HERO STATS STRIP -->
+                    <div class="stats-strip">
+                        <div class="stat-card">
+                            <div class="stat-num"><span class="counter" data-target="400">0</span>+</div>
+                            <div class="stat-label">DSA Problems</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <div class="stat-num"><span class="counter" data-target="15">0</span>+</div>
+                            <div class="stat-label">Projects Built</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <div class="stat-num"><span class="counter" data-target="10">0</span>+</div>
+                            <div class="stat-label">Tech Frameworks</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <div class="stat-num">7.54<span class="stat-unit">/9</span></div>
+                            <div class="stat-label">JNU CGPA</div>
+                        </div>
+                    </div>
+
+                    <div class="social-bar">
+                        <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener" class="social-pill" title="GitHub Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank" rel="noopener" class="social-pill" title="LinkedIn Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://leetcode.com/u/Vivek_Shukla_25/" target="_blank" rel="noopener" class="social-pill" title="LeetCode Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.874 5.874 0 0 0 .349 1.017 5.938 5.938 0 0 0 .614.991l.033.044 3.037 3.738a1.368 1.368 0 0 0 1.077.513c.427 0 .825-.19 1.09-.523a1.368 1.368 0 0 0 .19-1.127 1.36 1.36 0 0 0-.486-.749l-2.73-3.36a3.24 3.24 0 0 1-.336-.543 3.19 3.19 0 0 1-.19-.553 3.048 3.048 0 0 1-.034-1.295 3.036 3.036 0 0 1 .665-1.154l3.66-3.918 4.966-5.32c.54-.578.435-1.5-.236-1.956A1.385 1.385 0 0 0 13.483 0zm-2.88 5.904a1.373 1.373 0 0 0-1.026.478L4.912 11.45a1.37 1.37 0 1 0 2.008 1.874l4.665-5.068a1.37 1.37 0 0 0-.982-2.352zm9.15 4.316h-6.22a1.37 1.37 0 0 0 0 2.74h6.22a1.37 1.37 0 1 0 0-2.74z"/></svg>
+                            <span>LeetCode</span>
+                        </a>
+                        <button type="button" class="social-pill copy-email-btn" id="copyEmailHero" title="Click to copy email">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span class="copy-text">vivek25tech@gmail.com</span>
+                        </button>
                     </div>
 
                 </div>
 
             </div>
 
-            <div class="timeline-item">
+        </section>
 
-                <div class="timeline-content">
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="about" class="section reveal">
 
-                    <span class="year">Summer Internship</span>
+            <div class="section-header">
+                <span class="section-tag">ENGINEERING PROFILE</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Blending computer science fundamentals with modern production engineering.</p>
+            </div>
 
-                    <h3>Machine Learning Intern <span class="role-tag">Internship</span></h3>
+            <div class="bento-grid">
 
-                    <h4>Analytics Vidhya</h4>
-
+                <div class="bento-card">
+                    <div class="card-glow-track"></div>
+                    <div class="bento-icon">🎓</div>
+                    <h3>Academic Excellence @ JNU</h3>
                     <p>
-                        Completed a hands-on machine learning summer internship covering
-                        data preprocessing, model building, and evaluation on real-world
-                        datasets.
+                        Pursuing a <strong>Master of Computer Applications (MCA)</strong> at Jawaharlal Nehru University (JNU), New Delhi (CGPA 7.54/9). Built on a solid BCA background (8.13 CGPA), focusing on distributed architectures, database systems, and modern AI pipelines.
                     </p>
+                    <div class="bento-meta">
+                        <span class="chip-badge">JNU MCA '27</span>
+                        <span class="chip-badge">BCA Gold Tier</span>
+                    </div>
+                </div>
 
-                    <div class="tags">
-                        Python • Machine Learning • Data Preprocessing • Model Evaluation
+                <div class="bento-card">
+                    <div class="card-glow-track"></div>
+                    <div class="bento-icon">💻</div>
+                    <h3>Full-Stack System Engineering</h3>
+                    <p>
+                        Specialized in architecting performant, resilient web applications using <strong>MERN (MongoDB, Express, React, Node.js)</strong> and <strong>FastAPI (Python)</strong>. Proven track record of shipping end-to-end platforms with role-based access control, caching layers, and responsive UI.
+                    </p>
+                    <div class="bento-meta">
+                        <span class="chip-badge">Clean Code</span>
+                        <span class="chip-badge">Decoupled APIs</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-glow-track"></div>
+                    <div class="bento-icon">🤖</div>
+                    <h3>AI &amp; Autonomous Agent Workflows</h3>
+                    <p>
+                        Building next-generation intelligent applications using <strong>LangGraph</strong>, <strong>Gemini 2.5 Flash</strong>, and LLM orchestration. Designed autonomous agents with strict deterministic policy gating, tool execution, and real-time Server-Sent Events (SSE) telemetry.
+                    </p>
+                    <div class="bento-meta">
+                        <span class="chip-badge">Deterministic LLM Gates</span>
+                        <span class="chip-badge">Real-Time SSE</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-glow-track"></div>
+                    <div class="bento-icon">🧩</div>
+                    <h3>Algorithmic Rigor (DSA in Java)</h3>
+                    <p>
+                        Over <strong>400+ problems solved</strong> across LeetCode and GeeksforGeeks utilizing Java. Deep grasp of dynamic programming, graph traversals, trees, binary search, and amortized complexity analysis to build scalable, low-latency code.
+                    </p>
+                    <div class="bento-meta">
+                        <span class="chip-badge">400+ LeetCode/GFG</span>
+                        <span class="chip-badge">HackerRank Certified</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= TECH ARSENAL (SKILLS) ================= -->
+        <section id="skills" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">CAPABILITIES &amp; TOOLS</span>
+                <h2 class="section-title">Technical Arsenal</h2>
+                <p class="section-subtitle">Production-tested technologies across languages, frontend, backend, AI, and infrastructure.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <!-- Languages -->
+                <div class="skill-card">
+                    <div class="card-glow-track"></div>
+                    <div class="skill-card-head">
+                        <span class="skill-icon-badge">💻</span>
+                        <div>
+                            <h4>Programming Languages</h4>
+                            <span class="skill-sub">Core software engineering</span>
+                        </div>
+                    </div>
+                    <div class="tech-icon-group">
+                        <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" width="46" height="46" loading="lazy" title="Java (DSA &amp; OOP)">
+                        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" width="46" height="46" loading="lazy" title="Python (FastAPI, AI/ML)">
+                        <img src="https://skillicons.dev/icons?i=javascript&theme=dark" alt="JavaScript" width="46" height="46" loading="lazy" title="JavaScript (ES6+)">
+                        <img src="https://skillicons.dev/icons?i=typescript&theme=dark" alt="TypeScript" width="46" height="46" loading="lazy" title="TypeScript">
+                        <img src="https://skillicons.dev/icons?i=solidity&theme=dark" alt="Solidity" width="46" height="46" loading="lazy" title="Solidity (Ethereum Smart Contracts)">
+                        <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML5" width="46" height="46" loading="lazy" title="HTML5">
+                        <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS3" width="46" height="46" loading="lazy" title="CSS3">
+                        <img src="https://skillicons.dev/icons?i=sql&theme=dark" alt="SQL" width="46" height="46" loading="lazy" title="SQL (Relational Queries)">
+                    </div>
+                </div>
+
+                <!-- Frontend Architecture -->
+                <div class="skill-card">
+                    <div class="card-glow-track"></div>
+                    <div class="skill-card-head">
+                        <span class="skill-icon-badge">⚛️</span>
+                        <div>
+                            <h4>Frontend Architecture</h4>
+                            <span class="skill-sub">Modern responsive interfaces</span>
+                        </div>
+                    </div>
+                    <div class="tech-icon-group">
+                        <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" width="46" height="46" loading="lazy" title="React 19 / Component Architecture">
+                        <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" width="46" height="46" loading="lazy" title="Tailwind CSS v4">
+                        <img src="https://skillicons.dev/icons?i=vite&theme=dark" alt="Vite" width="46" height="46" loading="lazy" title="Vite Build Tooling">
+                        <img src="https://skillicons.dev/icons?i=sass&theme=dark" alt="SCSS" width="46" height="46" loading="lazy" title="SCSS / Modular Styling">
+                        <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" width="46" height="46" loading="lazy" title="Bootstrap 5">
+                    </div>
+                </div>
+
+                <!-- Backend & APIs -->
+                <div class="skill-card">
+                    <div class="card-glow-track"></div>
+                    <div class="skill-card-head">
+                        <span class="skill-icon-badge">🌐</span>
+                        <div>
+                            <h4>Backend &amp; Distributed APIs</h4>
+                            <span class="skill-sub">REST, SSE, microservices &amp; auth</span>
+                        </div>
+                    </div>
+                    <div class="tech-icon-group">
+                        <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js" width="46" height="46" loading="lazy" title="Node.js Runtime">
+                        <img src="https://skillicons.dev/icons?i=express&theme=dark" alt="Express" width="46" height="46" loading="lazy" title="Express.js MVC Framework">
+                        <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" alt="FastAPI" width="46" height="46" loading="lazy" title="FastAPI (High-performance Async Python)">
+                    </div>
+                </div>
+
+                <!-- AI, Agents & ML -->
+                <div class="skill-card">
+                    <div class="card-glow-track"></div>
+                    <div class="skill-card-head">
+                        <span class="skill-icon-badge">🧠</span>
+                        <div>
+                            <h4>AI, LLMs &amp; Autonomous Agents</h4>
+                            <span class="skill-sub">LangGraph, Gemini, NLP pipelines</span>
+                        </div>
+                    </div>
+                    <div class="tech-icon-group">
+                        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python AI" width="46" height="46" loading="lazy" title="Python Machine Learning">
+                        <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" alt="TensorFlow" width="46" height="46" loading="lazy" title="TensorFlow">
+                        <img src="https://skillicons.dev/icons?i=opencv&theme=dark" alt="OpenCV" width="46" height="46" loading="lazy" title="Computer Vision (OpenCV)">
+                    </div>
+                    <div class="tag-chips-sub">
+                        <span class="chip-sm">LangGraph</span>
+                        <span class="chip-sm">Gemini 2.5 Flash</span>
+                        <span class="chip-sm">Scikit-learn</span>
+                        <span class="chip-sm">TF-IDF NLP</span>
+                        <span class="chip-sm">SSE Streaming</span>
+                    </div>
+                </div>
+
+                <!-- Databases & Storage -->
+                <div class="skill-card">
+                    <div class="card-glow-track"></div>
+                    <div class="skill-card-head">
+                        <span class="skill-icon-badge">🗄️</span>
+                        <div>
+                            <h4>Databases &amp; Caching</h4>
+                            <span class="skill-sub">Data persistence &amp; modeling</span>
+                        </div>
+                    </div>
+                    <div class="tech-icon-group">
+                        <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt="MongoDB" width="46" height="46" loading="lazy" title="MongoDB Atlas (Document Store)">
+                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="46" height="46" loading="lazy" title="MySQL Relational DB">
+                        <img src="https://skillicons.dev/icons?i=sqlite&theme=dark" alt="SQLite" width="46" height="46" loading="lazy" title="SQLite">
+                        <img src="https://skillicons.dev/icons?i=redis&theme=dark" alt="Redis" width="46" height="46" loading="lazy" title="Redis Cache &amp; Pub/Sub">
+                    </div>
+                </div>
+
+                <!-- DevOps & Web3 Tooling -->
+                <div class="skill-card">
+                    <div class="card-glow-track"></div>
+                    <div class="skill-card-head">
+                        <span class="skill-icon-badge">⚙️</span>
+                        <div>
+                            <h4>DevOps, Cloud &amp; Web3</h4>
+                            <span class="skill-sub">Containers, version control &amp; testing</span>
+                        </div>
+                    </div>
+                    <div class="tech-icon-group">
+                        <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="46" height="46" loading="lazy" title="Docker Containerization">
+                        <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="46" height="46" loading="lazy" title="Git Version Control">
+                        <img src="https://skillicons.dev/icons?i=github&theme=dark" alt="GitHub" width="46" height="46" loading="lazy" title="GitHub CI/CD &amp; Actions">
+                        <img src="https://skillicons.dev/icons?i=linux&theme=dark" alt="Linux" width="46" height="46" loading="lazy" title="Linux Shell &amp; Server Administration">
+                        <img src="https://skillicons.dev/icons?i=postman&theme=dark" alt="Postman" width="46" height="46" loading="lazy" title="Postman API Testing">
+                        <img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS" width="46" height="46" loading="lazy" title="AWS Cloud Basics">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= PROJECTS SECTION WITH FAANG FILTER BAR ================= -->
+        <section id="projects" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">ENGINEERING PORTFOLIO</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world production platforms, autonomous AI workflows, actuarial analytics, and decentralized smart contracts.</p>
+            </div>
+
+            <!-- INTERACTIVE CATEGORY FILTER TABS -->
+            <div class="filter-wrapper">
+                <div class="filter-bar" id="projectFilters" role="tablist" aria-label="Filter projects by technical domain">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                        <span>All Projects</span> <span class="filter-badge">14</span>
+                    </button>
+                    <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">
+                        <span>🤖 AI &amp; Agents</span> <span class="filter-badge">4</span>
+                    </button>
+                    <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">
+                        <span>⚡ Full-Stack &amp; MERN</span> <span class="filter-badge">3</span>
+                    </button>
+                    <button class="filter-btn" data-filter="data" role="tab" aria-selected="false">
+                        <span>📊 FinTech &amp; Data</span> <span class="filter-badge">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="web3" role="tab" aria-selected="false">
+                        <span>⛓️ Web3 &amp; Blockchain</span> <span class="filter-badge">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="ml-automation" role="tab" aria-selected="false">
+                        <span>🐍 Python &amp; ML</span> <span class="filter-badge">2</span>
+                    </button>
+                    <button class="filter-btn" data-filter="web-tools" role="tab" aria-selected="false">
+                        <span>🌐 Web Utilities</span> <span class="filter-badge">3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- UNIFIED PROJECT GRID -->
+            <div class="project-grid" id="projectGrid">
+
+                <!-- 1. AI Customer Support Agent -->
+                <div class="project-card" data-category="ai">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-ai">🤖 Autonomous AI Agent</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">🛡️ AI Customer Support Agent</h3>
+                    <p class="card-description">
+                        End-to-end containerized autonomous AI customer-support agent automating e-commerce refund workflows. Features identity verification, CRM order lookups, deterministic policy engine gating, and a real-time admin reasoning dashboard streaming LLM decision logs live via Server-Sent Events (SSE).
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">LangGraph</span>
+                        <span class="tag-item">FastAPI</span>
+                        <span class="tag-item">Python</span>
+                        <span class="tag-item">React</span>
+                        <span class="tag-item">SSE Stream</span>
+                        <span class="tag-item">Docker</span>
+                        <span class="tag-item">SQLite</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/AI-Customer-Support-Agent" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Gen AI Interview Platform -->
+                <div class="project-card" data-category="ai">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-ai">🤖 Generative AI</span>
+                        <span class="status-indicator-badge status-live">🟢 Live Demo</span>
+                    </div>
+                    <h3 class="card-title">💡 Gen-AI Interview Platform</h3>
+                    <p class="card-description">
+                        Full-stack AI technical interview simulation platform powered by Google Gemini 2.5 Flash. Generates tailored domain-specific questions, evaluates user answers in real-time against technical rubrics, and creates comprehensive PDF/scoring evaluation reports.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">React (Vite)</span>
+                        <span class="tag-item">Node.js</span>
+                        <span class="tag-item">Express</span>
+                        <span class="tag-item">MongoDB</span>
+                        <span class="tag-item">Gemini 2.5 Flash</span>
+                        <span class="tag-item">JWT</span>
+                        <span class="tag-item">SCSS</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://gen-ai-theta-roan.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
+                            <span>🚀 Live Demo</span>
+                        </a>
+                        <a href="https://github.com/VivekShukla-2504/Gen-AI" target="_blank" rel="noopener" class="btn-project btn-github">
+                            <span>🔗 Source</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. ResearchPaper AI -->
+                <div class="project-card" data-category="ai">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-ai">🤖 NLP &amp; Recommender</span>
+                        <span class="status-indicator-badge status-live">🟢 Live Demo</span>
+                    </div>
+                    <h3 class="card-title">📚 ResearchPaper AI – arXiv Recommender</h3>
+                    <p class="card-description">
+                        Content-based scientific literature recommender indexing 41,120+ arXiv papers across 150,000 TF-IDF features. Features sublinear cosine similarity scoring on sparse matrices, real-time query parsing, reading history tracking, and optional MongoDB activity storage.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">FastAPI</span>
+                        <span class="tag-item">Python</span>
+                        <span class="tag-item">Scikit-learn</span>
+                        <span class="tag-item">TF-IDF</span>
+                        <span class="tag-item">Cosine Similarity</span>
+                        <span class="tag-item">React</span>
+                        <span class="tag-item">MongoDB</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://research-ai-opal-two.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
+                            <span>🚀 Live Demo</span>
+                        </a>
+                        <a href="https://github.com/VivekShukla-2504/ResearchAI-" target="_blank" rel="noopener" class="btn-project btn-github">
+                            <span>🔗 Source</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. TransitOps Platform -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-fullstack">⚡ Full-Stack Platform</span>
+                        <span class="status-indicator-badge status-live">🟢 Live Demo</span>
+                    </div>
+                    <h3 class="card-title">🚛 TransitOps – Smart Fleet Operations</h3>
+                    <p class="card-description">
+                        Enterprise transport logistics system handling end-to-end trip workflows (Draft → Dispatched → Completed), vehicle maintenance records ('In Shop' state transitions), driver license expiration alerts, fuel/expense tracking, and role-based access control with Recharts analytics.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">React 19</span>
+                        <span class="tag-item">Node.js</span>
+                        <span class="tag-item">Express.js</span>
+                        <span class="tag-item">MongoDB</span>
+                        <span class="tag-item">Tailwind CSS</span>
+                        <span class="tag-item">Recharts</span>
+                        <span class="tag-item">JWT</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://transit-deploy-liart.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
+                            <span>🚀 Live Demo</span>
+                        </a>
+                        <a href="https://github.com/VivekShukla-2504/Transit-Deploy-" target="_blank" rel="noopener" class="btn-project btn-github">
+                            <span>🔗 Source</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Insurance Risk & Premium Analytics -->
+                <div class="project-card" data-category="data">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-data">📊 FinTech &amp; Actuarial</span>
+                        <span class="status-indicator-badge status-live">🟢 Live Demo</span>
+                    </div>
+                    <h3 class="card-title">📈 Insurance Risk &amp; Premium Analytics</h3>
+                    <p class="card-description">
+                        Full-stack actuarial analytics system computing claim frequency, severity, pure premiums, loss ratios, credibility weighting, and multi-scenario stress tests. Delivers 8 interactive KPIs, 10 dynamic Recharts charts, and automated CSV/JSON reporting.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">FastAPI</span>
+                        <span class="tag-item">Pandas</span>
+                        <span class="tag-item">NumPy</span>
+                        <span class="tag-item">React (Vite)</span>
+                        <span class="tag-item">Tailwind CSS</span>
+                        <span class="tag-item">Recharts</span>
+                        <span class="tag-item">Actuarial Math</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://risk-and-premium-analysis.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
+                            <span>🚀 Live Demo</span>
+                        </a>
+                        <a href="https://github.com/VivekShukla-2504/Risk-and-Premium-Analysis" target="_blank" rel="noopener" class="btn-project btn-github">
+                            <span>🔗 Source</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. CertChain -->
+                <div class="project-card" data-category="web3">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-web3">⛓️ Web3 &amp; Blockchain</span>
+                        <span class="status-indicator-badge status-live">🟢 Live Demo</span>
+                    </div>
+                    <h3 class="card-title">🔒 CertChain – Blockchain Credential System</h3>
+                    <p class="card-description">
+                        Decentralized academic credential issuance and verification platform built with Solidity smart contracts on Ethereum. Stores tamper-proof cryptographic SHA-256 hashes on-chain with instant QR-code public verification and AES-256-GCM encrypted IPFS backup storage.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">Solidity</span>
+                        <span class="tag-item">Hardhat</span>
+                        <span class="tag-item">Ethers.js</span>
+                        <span class="tag-item">React</span>
+                        <span class="tag-item">Node.js</span>
+                        <span class="tag-item">IPFS</span>
+                        <span class="tag-item">AES-256</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://certchain-puce.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-demo">
+                            <span>🚀 Live Demo</span>
+                        </a>
+                        <a href="https://github.com/VivekShukla-2504/CERTCHAIN" target="_blank" rel="noopener" class="btn-project btn-github">
+                            <span>🔗 Source</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7. Streamify -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-fullstack">⚡ Real-Time Full-Stack</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">💬 Streamify – Real-Time Communication</h3>
+                    <p class="card-description">
+                        High-concurrency chat and multimedia communication application featuring instant typing indicators, emoji reactions, peer-to-peer WebRTC video calling, screen sharing, and dynamic user interface theme synchronization.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">React</span>
+                        <span class="tag-item">Express</span>
+                        <span class="tag-item">MongoDB</span>
+                        <span class="tag-item">Tailwind CSS</span>
+                        <span class="tag-item">Zustand</span>
+                        <span class="tag-item">TanStack Query</span>
+                        <span class="tag-item">WebRTC</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/Streamify" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. AI Invoice SaaS -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-fullstack">⚡ MERN Stack SaaS</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">📊 AI Invoice SaaS Platform</h3>
+                    <p class="card-description">
+                        Multi-tenant cloud invoicing SaaS system providing automated billing, client ledger tracking, secure JWT-authenticated access, revenue telemetry, and automated invoice PDF generation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">MongoDB</span>
+                        <span class="tag-item">Express.js</span>
+                        <span class="tag-item">React</span>
+                        <span class="tag-item">Node.js</span>
+                        <span class="tag-item">JWT</span>
+                        <span class="tag-item">REST API</span>
+                        <span class="tag-item">SaaS</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/AI-Invoice-SaaS-Platform" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9. AI Job Recommendation System -->
+                <div class="project-card" data-category="ai">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-ai">🤖 Rule-Based AI</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">🎯 AI Job Recommendation System</h3>
+                    <p class="card-description">
+                        Expert job recommendation engine built using Python and Prolog. Analyzes candidate qualifications, technical skills, desired roles, and domain preferences to generate tailored engineering matches via logical inference rules.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">Python</span>
+                        <span class="tag-item">Prolog</span>
+                        <span class="tag-item">Flask</span>
+                        <span class="tag-item">Expert Systems</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/AI-project" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10. SMS Spam Classifier -->
+                <div class="project-card" data-category="ml-automation">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-ml">🐍 Machine Learning</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">📩 SMS Spam Classifier</h3>
+                    <p class="card-description">
+                        Natural Language Processing pipeline that classifies SMS messages into spam or legitimate ham using text pre-processing, stop-word elimination, TF-IDF feature extraction, and Multinomial Naive Bayes.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">Python</span>
+                        <span class="tag-item">NLP</span>
+                        <span class="tag-item">Scikit-learn</span>
+                        <span class="tag-item">Naive Bayes</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/gui/tree/main/sms%20classifier" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11. Window Resizer Tool -->
+                <div class="project-card" data-category="ml-automation">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-tools">🪟 Desktop Automation</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">🪟 Window Resizer &amp; Organizer</h3>
+                    <p class="card-description">
+                        Developer desktop automation utility written in Python using PyAutoGUI to systematically resize, reposition, and standardize application windows across multi-monitor workstations.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">Python</span>
+                        <span class="tag-item">PyAutoGUI</span>
+                        <span class="tag-item">OS Automation</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/gui/blob/main/window%20resizer.py" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12. BMI Calculator -->
+                <div class="project-card" data-category="web-tools">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-web">🌐 JavaScript App</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">⚖️ Interactive BMI Calculator</h3>
+                    <p class="card-description">
+                        Responsive health metric tool computing Body Mass Index with real-time category visualization, health tier classification, and clean CSS flexbox/grid layout.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">HTML5</span>
+                        <span class="tag-item">CSS3</span>
+                        <span class="tag-item">JavaScript</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/MERN/tree/main/BMI_Index" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 13. Guess Number Game -->
+                <div class="project-card" data-category="web-tools">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-web">🌐 JavaScript Game</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">🎯 Guess the Number Game</h3>
+                    <p class="card-description">
+                        Interactive state-driven number guessing game featuring dynamic DOM updates, high-score tracking, random integer generation algorithms, and responsive mobile styling.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">HTML5</span>
+                        <span class="tag-item">CSS3</span>
+                        <span class="tag-item">JavaScript ES6</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/MERN/tree/main/guess_number" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 14. Web Window Color Change -->
+                <div class="project-card" data-category="web-tools">
+                    <div class="card-glow-track"></div>
+                    <div class="card-header-meta">
+                        <span class="domain-tag tag-web">🌐 DOM Tool</span>
+                        <span class="status-indicator-badge status-repo">📦 Open Source</span>
+                    </div>
+                    <h3 class="card-title">🎨 Dynamic DOM Palette Switcher</h3>
+                    <p class="card-description">
+                        Real-time DOM color manipulation project executing asynchronous hex color generation and event bubbling to provide smooth background palette transitions.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">HTML5</span>
+                        <span class="tag-item">CSS3</span>
+                        <span class="tag-item">DOM Events</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/VivekShukla-2504/MERN/tree/main/Webwindow_color_change" target="_blank" rel="noopener" class="btn-project btn-github-only">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= EXPERIENCE SECTION ================= -->
+        <section id="experience" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">CAREER HISTORY</span>
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">Real-world data pipelines, business intelligence, and machine learning delivery.</p>
+            </div>
+
+            <div class="timeline-container">
+
+                <div class="timeline-track"></div>
+
+                <!-- Role 1 -->
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-glow-track"></div>
+                        <div class="timeline-head">
+                            <span class="timeline-period">Jul 2025 – Oct 2025</span>
+                            <span class="role-badge badge-fulltime">Full-Time</span>
+                        </div>
+                        <h3 class="role-title">MIS Assistant</h3>
+                        <h4 class="company-title">People Action for National Integration (PANI)</h4>
+                        <p class="timeline-text">
+                            Spearheaded organizational data operations managing large datasets end-to-end. Executed data normalization, automated pivot reporting, and designed dynamic VLOOKUP/XLOOKUP dashboards for organizational operational insights and leadership reporting.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag-item">Data Cleaning</span>
+                            <span class="tag-item">Automated Reporting</span>
+                            <span class="tag-item">Pivot Tables</span>
+                            <span class="tag-item">Excel Modeling</span>
+                            <span class="tag-item">KPI Dashboards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-glow-track"></div>
+                        <div class="timeline-head">
+                            <span class="timeline-period">Summer Internship</span>
+                            <span class="role-badge badge-intern">Internship</span>
+                        </div>
+                        <h3 class="role-title">Machine Learning Intern</h3>
+                        <h4 class="company-title">Analytics Vidhya</h4>
+                        <p class="timeline-text">
+                            Executed an intensive machine learning program applying supervised and unsupervised algorithms to real-world industrial datasets. Handled missing data imputation, exploratory feature engineering, hyperparameter tuning, and cross-validation performance evaluation.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag-item">Python</span>
+                            <span class="tag-item">Machine Learning</span>
+                            <span class="tag-item">Feature Engineering</span>
+                            <span class="tag-item">Model Validation</span>
+                            <span class="tag-item">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= EDUCATION SECTION ================= -->
+        <section id="education" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">ACADEMIC JOURNEY</span>
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Consistent academic distinction across prestigious universities and institutions.</p>
+            </div>
+
+            <div class="timeline-container">
+
+                <div class="timeline-track"></div>
+
+                <!-- MCA -->
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-glow-track"></div>
+                        <div class="timeline-head">
+                            <span class="timeline-period">2025 – 2027</span>
+                            <span class="role-badge badge-postgrad">Postgraduate</span>
+                        </div>
+                        <h3 class="role-title">Master of Computer Applications (MCA)</h3>
+                        <h4 class="company-title">Jawaharlal Nehru University (JNU), New Delhi</h4>
+                        <p class="timeline-text">
+                            Focusing on Advanced Data Structures &amp; Algorithms, Database Systems, Distributed Systems, Software Engineering, and AI/ML Architectures.
+                        </p>
+                        <div class="edu-score">
+                            <span class="score-label">Current CGPA:</span>
+                            <span class="score-val">7.54 / 9.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BCA -->
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-glow-track"></div>
+                        <div class="timeline-head">
+                            <span class="timeline-period">2021 – 2024</span>
+                            <span class="role-badge badge-undergrad">Undergraduate</span>
+                        </div>
+                        <h3 class="role-title">Bachelor of Computer Applications (BCA)</h3>
+                        <h4 class="company-title">M.L.K.P.G. College, Balrampur (Siddharth University)</h4>
+                        <p class="timeline-text">
+                            Solid grounding in Object-Oriented Programming (Java/C++), Web Technologies, DBMS, Operating Systems, and Discrete Mathematics.
+                        </p>
+                        <div class="edu-score">
+                            <span class="score-label">Cumulative CGPA:</span>
+                            <span class="score-val">8.128 / 10.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class XII -->
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-glow-track"></div>
+                        <div class="timeline-head">
+                            <span class="timeline-period">2021</span>
+                            <span class="role-badge badge-school">Intermediate</span>
+                        </div>
+                        <h3 class="role-title">Intermediate (Class XII)</h3>
+                        <h4 class="company-title">CMS Inter College, Balrampur</h4>
+                        <p class="timeline-text">
+                            Uttar Pradesh State Board • Mathematics &amp; Science curriculum.
+                        </p>
+                        <div class="edu-score">
+                            <span class="score-label">Score:</span>
+                            <span class="score-val">83.40%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class X -->
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-glow-track"></div>
+                        <div class="timeline-head">
+                            <span class="timeline-period">2019</span>
+                            <span class="role-badge badge-school">High School</span>
+                        </div>
+                        <h3 class="role-title">High School (Class X)</h3>
+                        <h4 class="company-title">CMS Inter College, Balrampur</h4>
+                        <p class="timeline-text">
+                            Uttar Pradesh State Board • Science, Mathematics &amp; Computer Foundation.
+                        </p>
+                        <div class="edu-score">
+                            <span class="score-label">Score:</span>
+                            <span class="score-val">81.33%</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= ACHIEVEMENTS SECTION ================= -->
+        <section id="achievements" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">MILESTONES</span>
+                <h2 class="section-title">Key Highlights</h2>
+                <p class="section-subtitle">Measurable proof of technical competence, problem-solving, and engineering impact.</p>
+            </div>
+
+            <div class="achievements-grid">
+
+                <div class="achievement-card">
+                    <div class="card-glow-track"></div>
+                    <div class="achievement-icon">🧩</div>
+                    <div class="achievement-value"><span class="counter" data-target="400">0</span>+</div>
+                    <div class="achievement-title">DSA Problems Solved</div>
+                    <p class="achievement-sub">Active algorithmic problem solving in Java across LeetCode &amp; GeeksforGeeks.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="card-glow-track"></div>
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">Certified</div>
+                    <div class="achievement-title">HackerRank Software Engineer</div>
+                    <p class="achievement-sub">Verified proficiency in software engineering fundamentals, coding, and problem solving.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="card-glow-track"></div>
+                    <div class="achievement-icon">🎓</div>
+                    <div class="achievement-value">MCA @ JNU</div>
+                    <div class="achievement-title">Premier National University</div>
+                    <p class="achievement-sub">Secured prestigious admission to JNU School of Computer &amp; Systems Sciences.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="card-glow-track"></div>
+                    <div class="achievement-icon">🚀</div>
+                    <div class="achievement-value"><span class="counter" data-target="15">0</span>+</div>
+                    <div class="achievement-title">Engineering Projects</div>
+                    <p class="achievement-sub">Spanning Autonomous AI Agents, MERN SaaS, FinTech Analytics, and Web3 Smart Contracts.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CODING PROFILES & LIVE STATS ================= -->
+        <section id="coding" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">PROOF OF WORK</span>
+                <h2 class="section-title">Coding Profiles &amp; Telemetry</h2>
+                <p class="section-subtitle">Explore live competitive programming profiles, code repositories, and technical writing.</p>
+            </div>
+
+            <div class="coding-profiles-grid">
+
+                <a href="https://leetcode.com/u/Vivek_Shukla_25/" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon leetcode-color">🟡</div>
+                    <div class="coding-info">
+                        <h4>LeetCode</h4>
+                        <p>@Vivek_Shukla_25</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon github-color">⚫</div>
+                    <div class="coding-info">
+                        <h4>GitHub</h4>
+                        <p>@VivekShukla-2504</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a href="https://www.geeksforgeeks.org/profile/7800652515vivek/" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon gfg-color">🟢</div>
+                    <div class="coding-info">
+                        <h4>GeeksforGeeks</h4>
+                        <p>@7800652515vivek</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a href="https://codolio.com/profile/Vivek_Tech" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon codolio-color">🔵</div>
+                    <div class="coding-info">
+                        <h4>Codolio</h4>
+                        <p>@Vivek_Tech</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a href="https://www.hackerrank.com/profile/vivek25tech" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon hackerrank-color">🟣</div>
+                    <div class="coding-info">
+                        <h4>HackerRank</h4>
+                        <p>@vivek25tech</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon linkedin-color">🔷</div>
+                    <div class="coding-info">
+                        <h4>LinkedIn</h4>
+                        <p>Vivek Shukla</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a href="https://medium.com/@7800652515vivek" target="_blank" rel="noopener" class="coding-card">
+                    <div class="card-glow-track"></div>
+                    <div class="coding-icon medium-color">⚪</div>
+                    <div class="coding-info">
+                        <h4>Medium</h4>
+                        <p>Technical Blogs</p>
+                    </div>
+                    <span class="external-arrow">↗</span>
+                </a>
+
+            </div>
+
+            <!-- LIVE STATS CARDS WITH GRACEFUL FALLBACK -->
+            <div class="github-stats-container">
+
+                <div class="stats-card-wrapper">
+                    <img src="https://github-readme-stats.vercel.app/api?username=VivekShukla-2504&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" alt="Vivek's GitHub stats summary" width="480" height="195" loading="lazy" onerror="this.closest('.github-stats-container').classList.add('stats-error'); this.style.display='none';">
+                </div>
+
+                <div class="stats-card-wrapper">
+                    <img src="https://streak-stats.demolab.com/?user=VivekShukla-2504&theme=tokyonight&hide_border=true&background=00000000" alt="Vivek's GitHub contribution streak" width="480" height="195" loading="lazy" onerror="this.closest('.github-stats-container').classList.add('stats-error'); this.style.display='none';">
+                </div>
+
+                <div class="stats-card-wrapper">
+                    <img src="https://leetcard.jacoblin.cool/Vivek_Shukla_25?theme=dark&font=Plus%20Jakarta%20Sans&ext=heatmap" alt="Vivek's LeetCode solved problems breakdown" width="480" height="195" loading="lazy" onerror="this.closest('.github-stats-container').classList.add('stats-error'); this.style.display='none';">
+                </div>
+
+                <p class="stats-fallback-msg">
+                    📊 Live metrics card loading or cached —
+                    <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener">view Vivek's profile directly on GitHub</a>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CERTIFICATIONS SECTION ================= -->
+        <section id="certificates" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">VERIFIED CREDENTIALS</span>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Industry-recognized assessments in software engineering, frontend development, and machine learning.</p>
+            </div>
+
+            <div class="certificates-grid">
+
+                <!-- Certificate 1 -->
+                <div class="certificate-card">
+                    <div class="card-glow-track"></div>
+                    <div class="cert-issuer">
+                        <span class="issuer-badge">HackerRank Verified</span>
+                    </div>
+                    <h3 class="cert-title">💼 Software Engineer Intern</h3>
+                    <p class="cert-desc">
+                        Cleared rigorous HackerRank skill assessment validating data structures, algorithmic problem-solving, and core software engineering fundamentals.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">Algorithms</span>
+                        <span class="tag-item">DSA</span>
+                        <span class="tag-item">Problem Solving</span>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/652552679d40" target="_blank" rel="noopener" class="cert-verify-btn">
+                        <span>📜 Verify Certificate</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card">
+                    <div class="card-glow-track"></div>
+                    <div class="cert-issuer">
+                        <span class="issuer-badge">HackerRank Verified</span>
+                    </div>
+                    <h3 class="cert-title">🚀 Software Engineer</h3>
+                    <p class="cert-desc">
+                        Demonstrated professional competence in full-cycle software development, debugging, algorithmic efficiency, and scalable code architecture.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">System Design</span>
+                        <span class="tag-item">Clean Code</span>
+                        <span class="tag-item">Debugging</span>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/efa733bb8d33" target="_blank" rel="noopener" class="cert-verify-btn">
+                        <span>📜 Verify Certificate</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="card-glow-track"></div>
+                    <div class="cert-issuer">
+                        <span class="issuer-badge">HackerRank Verified</span>
+                    </div>
+                    <h3 class="cert-title">⚛️ Frontend Developer (React)</h3>
+                    <p class="cert-desc">
+                        Validated expertise in building modern, performant React applications, state management architectures, hooks, and component lifecycle paradigms.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">React.js</span>
+                        <span class="tag-item">State Management</span>
+                        <span class="tag-item">Hooks</span>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/iframe/800dd117ead2" target="_blank" rel="noopener" class="cert-verify-btn">
+                        <span>📜 Verify Certificate</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card">
+                    <div class="card-glow-track"></div>
+                    <div class="cert-issuer">
+                        <span class="issuer-badge">Analytics Vidhya</span>
+                    </div>
+                    <h3 class="cert-title">🧠 Machine Learning Summer Training</h3>
+                    <p class="cert-desc">
+                        Completed hands-on machine learning training covering end-to-end data pipelines, exploratory analysis, model evaluation, and predictive analytics.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-item">Machine Learning</span>
+                        <span class="tag-item">Python</span>
+                        <span class="tag-item">Predictive Analytics</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1EGx2RqBN2Mmsm3526VWy6NSgUVJup-Pt/view?usp=sharing" target="_blank" rel="noopener" class="cert-verify-btn">
+                        <span>📜 Verify Certificate</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CONTACT SECTION ================= -->
+        <section id="contact" class="section reveal">
+
+            <div class="section-header">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">Let's Build Something Exceptional</h2>
+                <p class="section-subtitle">Interested in hiring, collaborating on an AI / full-stack initiative, or discussing an engineering role? Drop me a message.</p>
+            </div>
+
+            <div class="contact-layout">
+
+                <!-- Left info card -->
+                <div class="contact-info-card">
+                    <div class="card-glow-track"></div>
+
+                    <div class="contact-header">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out directly via email or through the messaging form.</p>
+                    </div>
+
+                    <div class="contact-points">
+
+                        <div class="contact-point-item">
+                            <div class="point-icon">📍</div>
+                            <div class="point-details">
+                                <span class="point-label">Location</span>
+                                <span class="point-value">New Delhi, India (Open to Remote &amp; Relocation)</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-point-item">
+                            <div class="point-icon">📧</div>
+                            <div class="point-details">
+                                <span class="point-label">Direct Email</span>
+                                <span class="point-value">vivek25tech@gmail.com</span>
+                            </div>
+                            <button type="button" class="copy-email-btn" id="copyEmailContact" title="Copy email address">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+
+                        <div class="contact-point-item">
+                            <div class="point-icon">⏱️</div>
+                            <div class="point-details">
+                                <span class="point-label">Response Time</span>
+                                <span class="point-value">Guaranteed response within 24 Hours</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-point-item">
+                            <div class="point-icon">💼</div>
+                            <div class="point-details">
+                                <span class="point-label">Work Authorization</span>
+                                <span class="point-value">Indian Citizen • Available for SDE Full-Time &amp; Internships</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="visitor-counter-wrapper">
+                        <span class="counter-label">Verified Portfolio Impressions:</span>
+                        <img src="https://komarev.com/ghpvc/?username=VivekShukla-2504&label=Profile%20Views&color=00d4ff&style=flat" alt="Vivek Shukla Portfolio Views" width="160" height="20" loading="lazy">
                     </div>
 
                 </div>
 
-            </div>
+                <!-- Right contact form -->
+                <div class="contact-form-card">
+                    <div class="card-glow-track"></div>
 
-        </div>
+                    <form id="contactForm" class="modern-form" action="https://formspree.io/f/xgogrlke" method="POST">
 
-    </section>
+                        <div class="form-group">
+                            <label for="cf-name">Your Name</label>
+                            <input type="text" id="cf-name" name="name" placeholder="Sundar Pichai" required autocomplete="name">
+                        </div>
 
+                        <div class="form-group">
+                            <label for="cf-email">Your Work Email</label>
+                            <input type="email" id="cf-email" name="email" placeholder="recruiter@google.com" required autocomplete="email">
+                        </div>
 
-    <!-- ================= ACHIEVEMENTS ================= -->
+                        <div class="form-group">
+                            <label for="cf-subject">Subject / Purpose</label>
+                            <input type="text" id="cf-subject" name="subject" placeholder="SDE Role / Technical Discussion / Project" required>
+                        </div>
 
-    <section id="achievements" class="reveal">
+                        <div class="form-group">
+                            <label for="cf-message">Message</label>
+                            <textarea id="cf-message" name="message" rows="5" placeholder="Hi Vivek, we came across your work in Full-Stack &amp; AI Agents and would like to schedule a discussion..." required></textarea>
+                        </div>
 
-        <h2>🏆 Achievements</h2>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>📨 Send Message</span>
+                        </button>
 
-        <div class="achievements-grid">
+                        <div id="formStatus" class="form-status-alert" role="status" aria-live="polite"></div>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">🧩</div>
-                <div class="achievement-value">400+</div>
-                <p>DSA Problems Solved</p>
-            </div>
+                    </form>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">✅</div>
-                <div class="achievement-value">Certified</div>
-                <p>HackerRank Software Engineer</p>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🎓</div>
-                <div class="achievement-value">MCA</div>
-                <p>Jawaharlal Nehru University</p>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🚀</div>
-                <div class="achievement-value">15+</div>
-                <p>Projects Built</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CODING PROFILES ================= -->
-
-    <section id="coding" class="reveal">
-
-        <h2>💻 Coding Profiles</h2>
-
-        <div class="coding-grid">
-
-            <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener" class="coding-card">
-                ⚫ GitHub
-            </a>
-
-            <a href="https://www.linkedin.com/in/vivek-shukla-1a229b27b/" target="_blank" rel="noopener" class="coding-card">
-                🔷 LinkedIn
-            </a>
-
-            <a href="https://leetcode.com/u/Vivek_Shukla_25/" target="_blank" rel="noopener" class="coding-card">
-                🟡 LeetCode
-            </a>
-
-            <a href="https://www.geeksforgeeks.org/profile/7800652515vivek/" target="_blank" rel="noopener" class="coding-card">
-                🟢 GeeksforGeeks
-            </a>
-
-            <a href="https://codolio.com/profile/Vivek_Tech" target="_blank" rel="noopener" class="coding-card">
-                🔵 Codolio
-            </a>
-
-            <a href="https://www.hackerrank.com/profile/vivek25tech" target="_blank" rel="noopener" class="coding-card">
-                🟣 HackerRank
-            </a>
-
-            <a href="https://medium.com/@7800652515vivek" target="_blank" rel="noopener" class="coding-card">
-                ⚪ Medium
-            </a>
-
-        </div>
-
-        <!-- ================= GITHUB STATS ================= -->
-
-        <div class="github-stats">
-
-            <img src="https://github-readme-stats.vercel.app/api?username=VivekShukla-2504&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" alt="Vivek's GitHub stats" width="495" height="195" loading="lazy" onerror="this.closest('.github-stats').classList.add('stats-error'); this.style.display='none';">
-
-            <img src="https://streak-stats.demolab.com/?user=VivekShukla-2504&theme=tokyonight&hide_border=true&background=00000000" alt="Vivek's GitHub streak stats" width="495" height="195" loading="lazy" onerror="this.closest('.github-stats').classList.add('stats-error'); this.style.display='none';">
-
-            <!-- Auto-updating LeetCode stats card (no manual editing needed) -->
-            <img src="https://leetcard.jacoblin.cool/Vivek_Shukla_25?theme=dark&font=Poppins&ext=heatmap" alt="Vivek's LeetCode stats" width="495" height="195" loading="lazy" onerror="this.closest('.github-stats').classList.add('stats-error'); this.style.display='none';">
-
-            <p class="stats-fallback">
-                📊 Live stats are momentarily unavailable —
-                <a href="https://github.com/VivekShukla-2504" target="_blank" rel="noopener">view directly on GitHub</a>
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CERTIFICATIONS ================= -->
-
-    <section id="certificates" class="reveal">
-
-        <h2>🏆 Certifications</h2>
-
-        <div class="project-grid">
-
-            <!-- Certificate 1 -->
-
-            <div class="project-card">
-
-                <h3>💼 Software Engineer Intern</h3>
-
-                <p>
-                    Successfully cleared the HackerRank Software Engineer Intern
-                    certification assessment demonstrating problem-solving,
-                    programming fundamentals, and software engineering skills.
-                </p>
-
-                <div class="tags">
-                    HackerRank • Software Engineering • DSA • Programming
                 </div>
 
-                <a href="https://www.hackerrank.com/certificates/652552679d40" target="_blank" rel="noopener">
-                    📜 View Certificate
-                </a>
-
             </div>
 
-
-
-            <!-- Certificate 2 -->
-
-            <div class="project-card">
-
-                <h3>🚀 Software Engineer</h3>
-
-                <p>
-                    Earned the HackerRank Software Engineer Certification by
-                    demonstrating proficiency in software development,
-                    coding, debugging, and problem-solving skills.
-                </p>
-
-                <div class="tags">
-                    HackerRank • Software Engineering • Coding • Algorithms
-                </div>
-
-                <a href="https://www.hackerrank.com/certificates/efa733bb8d33" target="_blank" rel="noopener">
-                    📜 View Certificate
-                </a>
-
-            </div>
-
-
-
-            <!-- Certificate 3 -->
-
-            <div class="project-card">
-
-                <h3>⚛️ Frontend Developer (React)</h3>
-
-                <p>
-                    Cleared the HackerRank Frontend Developer (React) certification
-                    assessment, demonstrating proficiency in building React-based
-                    user interfaces and component-driven development.
-                </p>
-
-                <div class="tags">
-                    HackerRank • React • Frontend Development • JavaScript
-                </div>
-
-                <a href="https://www.hackerrank.com/certificates/iframe/800dd117ead2" target="_blank" rel="noopener">
-                    📜 View Certificate
-                </a>
-
-            </div>
-
-
-
-            <!-- Certificate 4 -->
-
-            <div class="project-card">
-
-                <h3>🧠 Machine Learning Summer Training</h3>
-
-                <p>
-                    Completed a Machine Learning Summer Training program by
-                    Analytics Vidhya, covering data preprocessing, model building,
-                    and evaluation on real-world datasets.
-                </p>
-
-                <div class="tags">
-                    Analytics Vidhya • Machine Learning • Python • Data Preprocessing
-                </div>
-
-                <a href="https://drive.google.com/file/d/1EGx2RqBN2Mmsm3526VWy6NSgUVJup-Pt/view?usp=sharing" target="_blank" rel="noopener">
-                    📜 View Certificate
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-
-    <section id="contact" class="reveal">
-
-
-        <h2>📬 Contact Me</h2>
-
-        <div class="contact-info">
-
-            <div class="contact-item">📍 New Delhi, India</div>
-
-            <div class="contact-item">📧 vivek25tech@gmail.com</div>
-
-            <div class="contact-item">📱 Available for Internships & Full-Time Roles</div>
-
-            <div class="contact-item">⏱ Response within 24 Hours</div>
-
-        </div>
-
-        <!-- ================= CONTACT FORM (Formspree — no backend needed) ================= -->
-        <!--
-            Setup: create a free form at https://formspree.io, replace YOUR_FORM_ID
-            below with the ID Formspree gives you. Submissions land in your inbox
-            directly — recruiters don't need to open Gmail themselves.
-        -->
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xgogrlke" method="POST">
-
-            <div class="form-row">
-                <label for="cf-name">Name</label>
-                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
-            </div>
-
-            <div class="form-row">
-                <label for="cf-email">Email</label>
-                <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
-            </div>
-
-            <div class="form-row">
-                <label for="cf-message">Message</label>
-                <textarea id="cf-message" name="message" rows="5" placeholder="Say hello, share an opportunity, or ask a question..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn form-submit">📨 Send Message</button>
-
-            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-
-        </form>
-
-
-        <!-- ================= VISITOR COUNTER ================= -->
-
-        <div class="visitor-counter">
-
-            <img src="https://komarev.com/ghpvc/?username=VivekShukla-2504&label=Profile%20Views&color=00d4ff&style=flat" alt="Profile views counter" width="180" height="20">
-
-        </div>
-
-
-    </section>
+        </section>
 
     </main>
 
-
-    <footer>
-
-        <p>Designed & Developed by Vivek Shukla ❤️</p>
-
-        <p class="footer-copy">© 2026 All Rights Reserved</p>
-
-
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">&lt;VivekShukla /&gt;</span>
+                <p>Designed &amp; Engineered by Vivek Shukla • Built with modern web standards.</p>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copy">© <span id="currentYear">2026</span> All Rights Reserved.</p>
+                <a href="#home" class="back-to-top-link">Back to top ↑</a>
+            </div>
+        </div>
     </footer>
 
-
+    <!-- ================= SCRIPTS ================= -->
     <script src="script.js"></script>
-
 
 </body>
 

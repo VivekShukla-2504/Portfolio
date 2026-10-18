@@ -1,637 +1,386 @@
-// ================= PRELOADER =================
+/**
+ * VIVEK SHUKLA — FAANG-GRADE PORTFOLIO JAVASCRIPT
+ * Interactivity: Category Filtering, Cursor Spotlight, Typing Animation,
+ * Smooth Scrollspy, Dark/Light Theme, Contact AJAX, Copy-to-Clipboard.
+ */
 
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
+document.addEventListener("DOMContentLoaded", () => {
 
-// ================= TYPING ANIMATION =================
+    // ================= 1. THEME SWITCHER (Dark / Light Mode) =================
+    const themeToggle = document.getElementById("themeToggle");
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
-const texts = [
-    "MERN Stack Developer",
-    "AI Enthusiast",
-    "Full Stack Developer",
-    "Java Programmer",
-    "Problem Solver"
-];
+    function applyTheme(theme) {
+        if (theme === "light") {
+            document.body.classList.add("light-mode");
+            if (themeToggle) themeToggle.innerHTML = '<span class="theme-icon">☀️</span>';
+            if (themeColorMeta) themeColorMeta.setAttribute("content", "#f8fafc");
+        } else {
+            document.body.classList.remove("light-mode");
+            if (themeToggle) themeToggle.innerHTML = '<span class="theme-icon">🌙</span>';
+            if (themeColorMeta) themeColorMeta.setAttribute("content", "#07090e");
+        }
+    }
 
-let textIndex = 0;
-let charIndex = 0;
-let deleting = false;
+    const storedTheme = localStorage.getItem("portfolio-theme");
+    const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+    const initialTheme = storedTheme || (prefersLight ? "light" : "dark");
+    applyTheme(initialTheme);
 
-const typingElement = document.querySelector(".typing");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const isLight = document.body.classList.contains("light-mode");
+            const nextTheme = isLight ? "dark" : "light";
+            applyTheme(nextTheme);
+            localStorage.setItem("portfolio-theme", nextTheme);
+        });
+    }
 
-function typeEffect() {
+    // Keep following system theme if user hasn't made a manual choice
+    if (!storedTheme && window.matchMedia) {
+        window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+            if (localStorage.getItem("portfolio-theme")) return;
+            applyTheme(e.matches ? "light" : "dark");
+        });
+    }
 
-    if (!typingElement) return;
+    // ================= 2. TYPING ANIMATION =================
+    const roles = [
+        "MERN Stack Developer",
+        "Autonomous AI Engineer (LangGraph)",
+        "Full-Stack SDE (FastAPI & React)",
+        "Java DSA Specialist (400+ Solved)",
+        "Web3 & Blockchain Builder",
+        "MCA Scholar @ JNU New Delhi"
+    ];
 
-    const currentText = texts[textIndex];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.querySelector(".typing");
 
-    if (!deleting) {
+    function typeEffect() {
+        if (!typingElement) return;
 
-        typingElement.innerHTML =
-            currentText.substring(0, charIndex++);
+        const currentRole = roles[roleIndex];
 
-        if (charIndex > currentText.length) {
-            deleting = true;
-            setTimeout(typeEffect, 1200);
-            return;
+        if (!isDeleting) {
+            typingElement.textContent = currentRole.substring(0, charIndex++);
+            if (charIndex > currentRole.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1800);
+                return;
+            }
+        } else {
+            typingElement.textContent = currentRole.substring(0, charIndex--);
+            if (charIndex < 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeEffect, 300);
+                return;
+            }
         }
 
+        setTimeout(typeEffect, isDeleting ? 35 : 75);
+    }
+
+    typeEffect();
+
+    // ================= 3. INTERACTIVE PROJECT FILTERING =================
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const filter = btn.getAttribute("data-filter");
+
+            // Update active button state
+            filterButtons.forEach(b => {
+                b.classList.remove("active");
+                b.setAttribute("aria-selected", "false");
+            });
+            btn.classList.add("active");
+            btn.setAttribute("aria-selected", "true");
+
+            // Filter project cards
+            projectCards.forEach(card => {
+                const category = card.getAttribute("data-category");
+
+                if (filter === "all" || category === filter) {
+                    card.classList.remove("is-hidden");
+                } else {
+                    card.classList.add("is-hidden");
+                }
+            });
+        });
+    });
+
+    // ================= 4. CURSOR SPOTLIGHT TRACKER (FAANG / Linear Effect) =================
+    const spotlightCards = document.querySelectorAll(
+        ".bento-card, .skill-card, .project-card, .achievement-card, .timeline-card, .coding-card, .certificate-card, .contact-info-card, .contact-form-card"
+    );
+
+    spotlightCards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+        });
+    });
+
+    // ================= 5. STICKY HEADER & SCROLL PROGRESS BAR =================
+    const siteHeader = document.getElementById("siteHeader");
+    const progressBar = document.createElement("div");
+    progressBar.id = "progressBar";
+    document.body.prepend(progressBar);
+
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+
+        // Sticky header styling
+        if (siteHeader) {
+            if (scrollY > 40) {
+                siteHeader.classList.add("scrolled");
+            } else {
+                siteHeader.classList.remove("scrolled");
+            }
+        }
+
+        // Progress bar width
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0) {
+            const progress = (scrollY / totalHeight) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+    }, { passive: true });
+
+    // ================= 6. ACTIVE SCROLLSPY NAVIGATION =================
+    const sections = document.querySelectorAll("section[id]");
+    const navItems = document.querySelectorAll(".nav-item");
+
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + 160;
+
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute("id");
+
+            if (scrollPos >= top && scrollPos < top + height) {
+                navItems.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${id}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // ================= 7. MOBILE NAVIGATION TOGGLE =================
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+    const navOverlay = document.getElementById("navOverlay");
+
+    function closeMobileMenu() {
+        if (!navToggle || !navLinks || !navOverlay) return;
+        navToggle.classList.remove("open");
+        navLinks.classList.remove("open");
+        navOverlay.classList.remove("show");
+        navToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function openMobileMenu() {
+        if (!navToggle || !navLinks || !navOverlay) return;
+        navToggle.classList.add("open");
+        navLinks.classList.add("open");
+        navOverlay.classList.add("show");
+        navToggle.setAttribute("aria-expanded", "true");
+    }
+
+    if (navToggle) {
+        navToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.contains("open");
+            isOpen ? closeMobileMenu() : openMobileMenu();
+        });
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener("click", closeMobileMenu);
+    }
+
+    navItems.forEach(item => {
+        item.addEventListener("click", closeMobileMenu);
+    });
+
+    // ================= 8. STAT COUNTERS ANIMATION =================
+    const counters = document.querySelectorAll(".counter");
+    let countersAnimated = false;
+
+    function runCounters() {
+        counters.forEach(counter => {
+            const target = +counter.dataset.target;
+            const duration = 1400;
+            const stepTime = 25;
+            const steps = duration / stepTime;
+            const increment = target / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, stepTime);
+        });
+    }
+
+    if ("IntersectionObserver" in window) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    runCounters();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const statsSection = document.querySelector(".stats-strip");
+        if (statsSection) statsObserver.observe(statsSection);
     } else {
-
-        typingElement.innerHTML =
-            currentText.substring(0, charIndex--);
-
-        if (charIndex < 0) {
-            deleting = false;
-            textIndex++;
-
-            if (textIndex >= texts.length)
-                textIndex = 0;
-        }
+        runCounters();
     }
 
-    setTimeout(typeEffect, deleting ? 45 : 90);
-}
+    // ================= 9. TOAST NOTIFICATION & COPY EMAIL =================
+    const toast = document.createElement("div");
+    toast.className = "toast-notice";
+    document.body.appendChild(toast);
 
-typeEffect();
-
-
-// ================= REVEAL =================
-
-function reveal() {
-
-    const reveals = document.querySelectorAll(".reveal");
-
-    reveals.forEach(el => {
-
-        const top = el.getBoundingClientRect().top;
-        const visible = 120;
-
-        if (top < window.innerHeight - visible) {
-            el.classList.add("active");
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", reveal);
-reveal();
-
-
-// ================= NAVBAR =================
-
-const header = document.querySelector("header");
-
-function getHeaderBg(scrolled) {
-
-    const styles = getComputedStyle(document.body);
-
-    return scrolled
-        ? styles.getPropertyValue("--header-bg-scrolled")
-        : styles.getPropertyValue("--header-bg");
-
-}
-
-window.addEventListener("scroll", () => {
-
-    if (!header) return;
-
-    if (window.scrollY > 60) {
-
-        header.style.background = getHeaderBg(true);
-
-        header.style.backdropFilter = "blur(18px)";
-
-        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.25)";
-
+    function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2600);
     }
 
-    else {
+    const emailToCopy = "vivek25tech@gmail.com";
 
-        header.style.background = getHeaderBg(false);
-
-        header.style.boxShadow = "none";
-
+    function copyEmail() {
+        navigator.clipboard.writeText(emailToCopy).then(() => {
+            showToast("✓ Copied email: vivek25tech@gmail.com");
+        }).catch(() => {
+            showToast("vivek25tech@gmail.com");
+        });
     }
 
-});
+    const copyBtnHero = document.getElementById("copyEmailHero");
+    const copyBtnContact = document.getElementById("copyEmailContact");
 
+    if (copyBtnHero) copyBtnHero.addEventListener("click", copyEmail);
+    if (copyBtnContact) copyBtnContact.addEventListener("click", copyEmail);
 
-// ================= ACTIVE NAV =================
+    // ================= 10. BACK TO TOP BUTTON =================
+    const topBtn = document.createElement("button");
+    topBtn.id = "topBtn";
+    topBtn.innerHTML = "↑";
+    topBtn.setAttribute("aria-label", "Back to top");
+    document.body.appendChild(topBtn);
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop - 150;
-
-        if (window.scrollY >= sectionTop) {
-
-            current =
-                section.getAttribute("id");
-
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            topBtn.classList.add("show");
+        } else {
+            topBtn.classList.remove("show");
         }
+    }, { passive: true });
 
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
 
-    navLinks.forEach(link => {
+    // ================= 11. CONTACT FORM AJAX HANDLER (Formspree) =================
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
 
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-// ================= SMOOTH SCROLL =================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-        const targetId = this.getAttribute("href");
-
-        if (targetId.length <= 1) return;
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
-
+    if (contactForm) {
+        contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            target.scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-
-// ================= CONTACT FORM (Formspree — no backend needed) =================
-
-const contactForm = document.getElementById("contactForm");
-const formStatus = document.getElementById("formStatus");
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", async (e) => {
-
-        e.preventDefault();
-
-        const submitBtn = contactForm.querySelector(".form-submit");
-        const originalLabel = submitBtn ? submitBtn.innerHTML : "";
-
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = "Sending...";
-        }
-
-        if (formStatus) {
-            formStatus.textContent = "";
-        }
-
-        try {
-
-            const response = await fetch(contactForm.action, {
-                method: "POST",
-                body: new FormData(contactForm),
-                headers: { "Accept": "application/json" }
-            });
-
-            if (response.ok) {
-
-                if (formStatus) {
-                    formStatus.textContent = "✅ Thank you! Your message has been sent.";
-                    formStatus.style.color = "#00d4ff";
-                }
-
-                contactForm.reset();
-
-            } else {
-
-                if (formStatus) {
-                    formStatus.textContent = "⚠️ Something went wrong. Please email me directly at vivek25tech@gmail.com.";
-                    formStatus.style.color = "#ff6b6b";
-                }
-
-            }
-
-        } catch (err) {
-
-            if (formStatus) {
-                formStatus.textContent = "⚠️ Network error. Please email me directly at vivek25tech@gmail.com.";
-                formStatus.style.color = "#ff6b6b";
-            }
-
-        } finally {
+            const submitBtn = contactForm.querySelector(".btn-submit");
+            const originalLabel = submitBtn ? submitBtn.innerHTML : "";
 
             if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalLabel;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = "<span>⏳ Sending message...</span>";
             }
 
-        }
-
-    });
-
-}
-
-
-// ================= FOOTER =================
-
-const footerCopy =
-    document.querySelector(".footer-copy");
-
-if (footerCopy) {
-
-    footerCopy.innerHTML =
-        `© ${new Date().getFullYear()} All Rights Reserved`;
-
-}
-
-
-// ================= PROFILE IMAGE =================
-
-const profile = document.querySelector(".hero-image img");
-
-if (profile) {
-
-    if (profile.complete) {
-        profile.style.opacity = "1";
-    } else {
-        profile.style.opacity = "0";
-        profile.onload = () => {
-            profile.style.transition = "opacity 1s ease";
-            profile.style.opacity = "1";
-        };
-    }
-
-}
-
-
-// ================= PROJECT HOVER =================
-
-document.querySelectorAll(".project-card").forEach(card => {
-
-    card.addEventListener("mousemove", e => {
-
-        const rect =
-            card.getBoundingClientRect();
-
-        const x =
-            e.clientX - rect.left;
-
-        const y =
-            e.clientY - rect.top;
-
-        const rotateY =
-            (x - rect.width / 2) / 18;
-
-        const rotateX =
-            -(y - rect.height / 2) / 18;
-
-        card.style.transform =
-            `perspective(1000px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             scale(1.03)`;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "";
-
-    });
-
-});
-
-
-// ================= SCROLL PROGRESS BAR =================
-
-const progress =
-    document.createElement("div");
-
-progress.id = "progress-bar";
-
-document.body.appendChild(progress);
-
-window.addEventListener("scroll", () => {
-
-    const totalHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const progressHeight =
-        (window.scrollY / totalHeight) * 100;
-
-    progress.style.width =
-        progressHeight + "%";
-
-});
-
-
-// ================= BACK TO TOP =================
-
-const topBtn =
-    document.createElement("button");
-
-topBtn.innerHTML = "↑";
-
-topBtn.id = "topBtn";
-
-topBtn.setAttribute("aria-label", "Back to top");
-
-document.body.appendChild(topBtn);
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 500) {
-
-        topBtn.classList.add("show");
-
-    }
-
-    else {
-
-        topBtn.classList.remove("show");
-
-    }
-
-});
-
-topBtn.onclick = () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-};
-
-
-// ================= HERO BUTTON ANIMATION =================
-
-const buttons =
-    document.querySelectorAll(".btn");
-
-buttons.forEach(btn => {
-
-    btn.addEventListener("mouseenter", () => {
-
-        btn.style.transform =
-            "translateY(-4px) scale(1.05)";
-
-    });
-
-    btn.addEventListener("mouseleave", () => {
-
-        btn.style.transform =
-            "translateY(0) scale(1)";
-
-    });
-
-});
-
-
-// ================= DARK / LIGHT MODE TOGGLE =================
-
-const themeToggle = document.getElementById("themeToggle");
-
-// Keep the mobile browser address bar color in sync with the current theme
-const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-
-function applyTheme(theme) {
-
-    if (theme === "light") {
-
-        document.body.classList.add("light-mode");
-
-        if (themeToggle) themeToggle.innerHTML = "☀";
-
-        if (themeColorMeta) themeColorMeta.setAttribute("content", "#f4f6fb");
-
-    } else {
-
-        document.body.classList.remove("light-mode");
-
-        if (themeToggle) themeToggle.innerHTML = "🌙";
-
-        if (themeColorMeta) themeColorMeta.setAttribute("content", "#050816");
-
-    }
-
-    if (header) {
-
-        header.style.background = getHeaderBg(window.scrollY > 60);
-
-    }
-
-}
-
-// First-time visitors: respect their OS/browser preference.
-// Returning visitors: always honour whatever they picked manually last time.
-const storedTheme = localStorage.getItem("portfolio-theme");
-
-const prefersLight =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: light)").matches;
-
-const savedTheme = storedTheme || (prefersLight ? "light" : "dark");
-
-applyTheme(savedTheme);
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", () => {
-
-        const isLight = document.body.classList.contains("light-mode");
-
-        const nextTheme = isLight ? "dark" : "light";
-
-        applyTheme(nextTheme);
-
-        localStorage.setItem("portfolio-theme", nextTheme);
-
-    });
-
-}
-
-// If the visitor never manually chose a theme, keep following the OS setting live
-if (!storedTheme && window.matchMedia) {
-
-    window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
-
-        if (localStorage.getItem("portfolio-theme")) return; // user has since made a manual choice
-
-        applyTheme(e.matches ? "light" : "dark");
-
-    });
-
-}
-
-
-// ================= MOBILE NAV TOGGLE =================
-
-const navToggle = document.getElementById("navToggle");
-const navLinksEl = document.getElementById("navLinks");
-const navOverlay = document.getElementById("navOverlay");
-
-function closeMobileNav() {
-
-    if (!navToggle || !navLinksEl || !navOverlay) return;
-
-    navToggle.classList.remove("open");
-
-    navLinksEl.classList.remove("open");
-
-    navOverlay.classList.remove("show");
-
-    navToggle.setAttribute("aria-expanded", "false");
-
-}
-
-function openMobileNav() {
-
-    if (!navToggle || !navLinksEl || !navOverlay) return;
-
-    navToggle.classList.add("open");
-
-    navLinksEl.classList.add("open");
-
-    navOverlay.classList.add("show");
-
-    navToggle.setAttribute("aria-expanded", "true");
-
-}
-
-if (navToggle) {
-
-    navToggle.addEventListener("click", () => {
-
-        const isOpen = navLinksEl.classList.contains("open");
-
-        isOpen ? closeMobileNav() : openMobileNav();
-
-    });
-
-}
-
-if (navOverlay) {
-
-    navOverlay.addEventListener("click", closeMobileNav);
-
-}
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", closeMobileNav);
-
-});
-
-
-// ================= HERO STAT COUNTERS =================
-
-const counters = document.querySelectorAll(".counter");
-let countersStarted = false;
-
-function animateCounters() {
-
-    counters.forEach(counter => {
-
-        const target = +counter.dataset.target;
-        const duration = 1200;
-        const stepTime = 20;
-        const steps = duration / stepTime;
-        const increment = target / steps;
-
-        let current = 0;
-
-        const timer = setInterval(() => {
-
-            current += increment;
-
-            if (current >= target) {
-
-                counter.innerText = target;
-
-                clearInterval(timer);
-
-            } else {
-
-                counter.innerText = Math.floor(current);
-
+            if (formStatus) {
+                formStatus.textContent = "";
+                formStatus.style.color = "var(--text-muted)";
             }
 
-        }, stepTime);
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: "POST",
+                    body: new FormData(contactForm),
+                    headers: { "Accept": "application/json" }
+                });
 
-    });
-
-}
-
-function checkCounters() {
-
-    const statsSection = document.querySelector(".stats");
-
-    if (!statsSection || countersStarted) return;
-
-    const top = statsSection.getBoundingClientRect().top;
-
-    if (top < window.innerHeight - 100) {
-
-        countersStarted = true;
-
-        animateCounters();
-
+                if (response.ok) {
+                    if (formStatus) {
+                        formStatus.textContent = "✅ Thank you, Vivek has received your message and will reply shortly!";
+                        formStatus.style.color = "var(--accent-emerald)";
+                    }
+                    contactForm.reset();
+                    showToast("✅ Message sent successfully!");
+                } else {
+                    if (formStatus) {
+                        formStatus.textContent = "⚠️ Delivery error. Please email directly at vivek25tech@gmail.com";
+                        formStatus.style.color = "#f43f5e";
+                    }
+                }
+            } catch (err) {
+                if (formStatus) {
+                    formStatus.textContent = "⚠️ Network issue. Please email vivek25tech@gmail.com directly.";
+                    formStatus.style.color = "#f43f5e";
+                }
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalLabel;
+                }
+            }
+        });
     }
 
-}
+    // ================= 12. DYNAMIC CURRENT YEAR =================
+    const currentYearEl = document.getElementById("currentYear");
+    if (currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
+    }
 
-window.addEventListener("scroll", checkCounters);
-checkCounters();
-
-
-// ================= RESUME DOWNLOAD COUNTER (private, for your own tracking) =================
-// Stored only in this browser's localStorage — visitors never see it.
-// Open the browser console on your own device to check the count anytime:
-//   localStorage.getItem('resumeDownloadCount')
-
-const resumeBtn = document.getElementById("resumeBtn");
-
-if (resumeBtn) {
-
-    resumeBtn.addEventListener("click", () => {
-
-        const current = parseInt(localStorage.getItem("resumeDownloadCount") || "0", 10);
-
-        const updated = current + 1;
-
-        localStorage.setItem("resumeDownloadCount", updated);
-
-        console.log(`📄 Resume downloaded ${updated} time(s) on this browser.`);
-
+    // ================= 13. RESUME DOWNLOAD TRACKING =================
+    const resumeBtns = [document.getElementById("resumeBtn"), document.getElementById("navResumeBtn")];
+    resumeBtns.forEach(btn => {
+        if (!btn) return;
+        btn.addEventListener("click", () => {
+            const count = parseInt(localStorage.getItem("resumeDownloadCount") || "0", 10) + 1;
+            localStorage.setItem("resumeDownloadCount", count);
+            console.log(`📄 Resume downloaded: ${count} times on this browser.`);
+        });
     });
 
-}
+});
