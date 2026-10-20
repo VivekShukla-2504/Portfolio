@@ -1398,6 +1398,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.getElementById("navToggle");
     const navLinks = document.getElementById("navLinks");
     const navOverlay = document.getElementById("navOverlay");
+    const mobileDrawerClose = document.getElementById("mobileDrawerClose");
+    const mobileResumeHubBtn = document.getElementById("mobileResumeHubBtn");
+    const mobileCmdKBtn = document.getElementById("mobileCmdKBtn");
 
     function closeMobileMenu() {
         if (!navToggle || !navLinks || !navOverlay) return;
@@ -1405,6 +1408,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.remove("open");
         navOverlay.classList.remove("show");
         navToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
     }
 
     function openMobileMenu() {
@@ -1414,6 +1418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.add("open");
         navOverlay.classList.add("show");
         navToggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-open");
     }
 
     if (navToggle) {
@@ -1423,12 +1428,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    if (mobileDrawerClose) {
+        mobileDrawerClose.addEventListener("click", closeMobileMenu);
+    }
+
+    if (mobileResumeHubBtn) {
+        mobileResumeHubBtn.addEventListener("click", () => {
+            closeMobileMenu();
+            openResumeModal();
+        });
+    }
+
+    if (mobileCmdKBtn) {
+        mobileCmdKBtn.addEventListener("click", () => {
+            closeMobileMenu();
+            openCommandPalette();
+        });
+    }
+
     if (navOverlay) {
         navOverlay.addEventListener("click", closeMobileMenu);
     }
 
     navItems.forEach(item => {
         item.addEventListener("click", closeMobileMenu);
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navLinks && navLinks.classList.contains("open")) {
+            closeMobileMenu();
+        }
     });
 
 
@@ -1651,7 +1680,7 @@ document.addEventListener("DOMContentLoaded", () => {
             resizeTimer = setTimeout(resizeCanvas, 150);
         });
 
-        // Mouse Tracker
+        // Mouse & Touch Tracker
         const mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, active: false };
         window.addEventListener("mousemove", (e) => {
             mouse.targetX = e.clientX;
@@ -1662,6 +1691,16 @@ document.addEventListener("DOMContentLoaded", () => {
             mouse.active = false;
             mouse.targetX = -1000;
             mouse.targetY = -1000;
+        });
+        window.addEventListener("touchmove", (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.targetX = e.touches[0].clientX;
+                mouse.targetY = e.touches[0].clientY;
+                mouse.active = true;
+            }
+        }, { passive: true });
+        window.addEventListener("touchend", () => {
+            mouse.active = false;
         });
 
         // 1. Universe Nodes (arXiv galaxy)
