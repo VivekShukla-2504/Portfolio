@@ -44,7 +44,7 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=VivekShukla-2504&label=PROFILE+VIEWS&style=flat-square&color=00d4ff&labelColor=0d1117)
 ![Followers](https://img.shields.io/github/followers/VivekShukla-2504?style=flat-square&color=7c3aed&labelColor=0d1117&logo=github&logoColor=00d4ff)
 ![Stars](https://img.shields.io/github/stars/VivekShukla-2504?affiliations=OWNER&style=flat-square&color=7c3aed&labelColor=0d1117&logo=github&logoColor=00d4ff)
-![Contributions](https://img.shields.io/badge/Status-Actively_Hiring-10b981?style=flat-square&labelColor=0d1117)
+![Status](https://img.shields.io/badge/Status-Open_to_Work-10b981?style=flat-square&labelColor=0d1117)
 
 </div>
 
