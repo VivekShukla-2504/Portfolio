@@ -368,10 +368,10 @@ Data Analytics: Python Pandas • NumPy • Actuarial Loss Ratios • Claim Freq
 <table width="100%">
 <tr>
 <td width="50%" align="center" valign="middle">
-<img width="100%" src="https://github-readme-stats.vercel.app/api?username=VivekShukla-2504&show_icons=true&theme=tokyonight&hide_border=true&bg_color=07090e&title_color=00d4ff&icon_color=00d4ff&text_color=94a3b8"/>
+<img width="100%" src="https://github-readme-stats.vercel.app/api?username=VivekShukla-2504&show_icons=true&theme=tokyonight&hide_border=true&bg_color=07090e&title_color=00d4ff&icon_color=00d4ff&text_color=94a3b8&cache_seconds=86400"/>
 </td>
 <td width="50%" align="center" valign="middle">
-<img width="100%" src="https://streak-stats.demolab.com?user=VivekShukla-2504&theme=tokyonight&hide_border=true&background=07090e&stroke=00d4ff&ring=00d4ff&fire=8b5cf6&currStreakNum=ffffff&sideNums=94a3b8&currStreakLabel=00d4ff&sideLabels=00d4ff&dates=94a3b8"/>
+<img width="100%" src="https://streak-stats.demolab.com?user=VivekShukla-2504&theme=tokyonight&hide_border=true&background=07090e&stroke=00d4ff&ring=00d4ff&fire=8b5cf6&currStreakNum=ffffff&sideNums=94a3b8&currStreakLabel=00d4ff&sideLabels=00d4ff&dates=94a3b8&cache_seconds=86400"/>
 </td>
 </tr>
 </table>
